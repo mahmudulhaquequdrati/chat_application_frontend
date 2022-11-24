@@ -9,9 +9,10 @@ File: Main Css File
 
 //Fonts
 @import "custom/fonts/fonts";
+
+// CSS
 @import "app.css";
 @import "bootstrap.css";
-// @import "icons.css";
 
 //Core files
 @import "../../../node_modules/bootstrap/scss/functions";
