@@ -1,6 +1,8 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import img1 from "../../assets/images/users/avatar-2.jpg";
+import "../../../node_modules/boxicons/css/boxicons.min.css";
 
 const ConversationUser = () => {
   return (
@@ -21,7 +23,7 @@ const ConversationUser = () => {
                 <div className="d-flex align-items-center">
                   <div className="flex-shrink-0 chat-user-img online user-own-img align-self-center me-3 ms-0">
                     <img
-                      src="assets/images/users/avatar-2.jpg"
+                      src={img1}
                       className="rounded-circle avatar-sm"
                       alt=""
                     />
@@ -183,7 +185,7 @@ const ConversationUser = () => {
         <div className="chat-list left" id="10">
           <div className="conversation-list">
             <div className="chat-avatar">
-              <img src="assets/images/users/avatar-2.jpg" alt="" />
+              <img src={img1} alt="" />
             </div>
             <div className="user-chat-content">
               <div className="ctext-wrap">
@@ -273,7 +275,7 @@ const ConversationUser = () => {
         <div className="chat-list left" id="11">
           <div className="conversation-list">
             <div className="chat-avatar">
-              <img src="assets/images/users/avatar-2.jpg" alt="" />
+              <img src={img1} alt="" />
             </div>
             <div className="user-chat-content">
               <div className="ctext-wrap">
@@ -300,13 +302,13 @@ const ConversationUser = () => {
         {/* --> */}
       </div>
 
-      <div
+      {/* <div
         className="alert alert-warning alert-dismissible copyclipboard-alert px-4 fade show"
         id="copyClipBoard"
         role="alert"
       >
         Message copied
-      </div>
+      </div> */}
       {/* <!-- end chat conversation end --> */}
     </div>
   );

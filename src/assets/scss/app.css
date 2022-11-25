@@ -9,7 +9,6 @@ File: Main Css File
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 @import "app.css";
 @import "bootstrap.css";
-@import "icons.css";
 :root {
   --bs-body-bg: #fafafa;
   --bs-body-color: #495057;
@@ -35,7 +34,7 @@ File: Main Css File
   --bs-heading-color: $gray-700;
 }
 
-[data-layout-mode=dark] {
+[data-layout-mode="dark"] {
   --bs-gray-100: #1a1d21;
   --bs-gray-200: #212529;
   --bs-gray-300: #2a2f34;
@@ -97,7 +96,13 @@ File: Main Css File
   margin-left: -50px;
   opacity: 0;
   background: rgba(0, 0, 0, 0.2);
-  background: radial-gradient(rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(
+    rgba(0, 0, 0, 0.2) 0,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(255, 255, 255, 0) 70%
+  );
   transition: all 0.5s ease-out;
   transition-property: transform, opacity;
   transform: scale(0) translate(0, 0);
@@ -106,7 +111,13 @@ File: Main Css File
 
 .waves-effect.waves-light .waves-ripple {
   background: rgba(255, 255, 255, 0.4);
-  background: radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(
+    rgba(255, 255, 255, 0.2) 0,
+    rgba(255, 255, 255, 0.3) 40%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0) 70%
+  );
 }
 
 .waves-effect.waves-classic .waves-ripple {
@@ -410,7 +421,11 @@ File: Main Css File
 }
 
 .bg-primary-gradient {
-  background-image: linear-gradient(to top, rgba(var(--bs-secondary-rgb), 1), rgba(var(--bs-primary-rgb), 1));
+  background-image: linear-gradient(
+    to top,
+    rgba(var(--bs-secondary-rgb), 1),
+    rgba(var(--bs-primary-rgb), 1)
+  );
 }
 
 .bg-overlay {
@@ -469,7 +484,11 @@ File: Main Css File
   cursor: pointer;
 }
 .card-radio .customizer-color01 {
-  background-image: linear-gradient(to top, var(--bs-secondary), var(--bs-primary));
+  background-image: linear-gradient(
+    to top,
+    var(--bs-secondary),
+    var(--bs-primary)
+  );
 }
 .card-radio .customizer-color02 {
   background-image: linear-gradient(to top, #05ae82, #048765);
@@ -481,16 +500,16 @@ File: Main Css File
   background-image: linear-gradient(to top, #456fe8, #19b0ec);
 }
 .card-radio .customizer-color05 {
-  background-image: linear-gradient(to top, #1768B5, #754CC3);
+  background-image: linear-gradient(to top, #1768b5, #754cc3);
 }
 .card-radio .customizer-color06 {
-  background-image: linear-gradient(to top, #FADE6F, #E29432);
+  background-image: linear-gradient(to top, #fade6f, #e29432);
 }
 .card-radio .customizer-color07 {
-  background-image: linear-gradient(to top, #CF5C77, #0E7ED3);
+  background-image: linear-gradient(to top, #cf5c77, #0e7ed3);
 }
 .card-radio .customizer-color08 {
-  background-image: linear-gradient(to top, #8A62F4, #1FC4AB);
+  background-image: linear-gradient(to top, #8a62f4, #1fc4ab);
 }
 .card-radio .form-check-input {
   display: none;
@@ -516,22 +535,29 @@ File: Main Css File
   min-height: 64px;
   border-radius: 8px;
 }
-.custom-colors-picker .pickr .pcr-button::before, .custom-colors-picker .pickr .pcr-button::after {
+.custom-colors-picker .pickr .pcr-button::before,
+.custom-colors-picker .pickr .pcr-button::after {
   border-radius: 0.25rem;
 }
 
-[type=tel]::-moz-placeholder, [type=url]::-moz-placeholder, [type=email]::-moz-placeholder, [type=number]::-moz-placeholder {
+[type="tel"]::-moz-placeholder,
+[type="url"]::-moz-placeholder,
+[type="email"]::-moz-placeholder,
+[type="number"]::-moz-placeholder {
   text-align: left; /*rtl: right*/
 }
 
-[type=tel]:-ms-input-placeholder, [type=url]:-ms-input-placeholder, [type=email]:-ms-input-placeholder, [type=number]:-ms-input-placeholder {
+[type="tel"]:-ms-input-placeholder,
+[type="url"]:-ms-input-placeholder,
+[type="email"]:-ms-input-placeholder,
+[type="number"]:-ms-input-placeholder {
   text-align: left; /*rtl: right*/
 }
 
-[type=tel]::placeholder,
-[type=url]::placeholder,
-[type=email]::placeholder,
-[type=number]::placeholder {
+[type="tel"]::placeholder,
+[type="url"]::placeholder,
+[type="email"]::placeholder,
+[type="number"]::placeholder {
   text-align: left; /*rtl: right*/
 }
 
@@ -558,23 +584,23 @@ File: Main Css File
 }
 .loader-line .line:nth-last-child(1) {
   -webkit-animation: loadingLine 1.25s 1s infinite;
-          animation: loadingLine 1.25s 1s infinite;
+  animation: loadingLine 1.25s 1s infinite;
 }
 .loader-line .line:nth-last-child(2) {
   -webkit-animation: loadingLine 1.25s 0.75s infinite;
-          animation: loadingLine 1.25s 0.75s infinite;
+  animation: loadingLine 1.25s 0.75s infinite;
 }
 .loader-line .line:nth-last-child(3) {
   -webkit-animation: loadingLine 1.25s 0.5s infinite;
-          animation: loadingLine 1.25s 0.5s infinite;
+  animation: loadingLine 1.25s 0.5s infinite;
 }
 .loader-line .line:nth-last-child(4) {
   -webkit-animation: loadingLine 1.25s 0.25s infinite;
-          animation: loadingLine 1.25s 0.25s infinite;
+  animation: loadingLine 1.25s 0.25s infinite;
 }
 .loader-line .line:nth-last-child(5) {
   -webkit-animation: loadingLine 1.25s 0s infinite;
-          animation: loadingLine 1.25s 0s infinite;
+  animation: loadingLine 1.25s 0s infinite;
 }
 
 .line {
@@ -733,8 +759,8 @@ File: Main Css File
 [data-simplebar].simplebar-dragging .simplebar-content {
   pointer-events: none;
   -moz-user-select: none;
-   -ms-user-select: none;
-       user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   -webkit-user-select: none;
 }
 
@@ -798,7 +824,7 @@ File: Main Css File
 }
 
 /* Rtl support */
-[data-simplebar-direction=rtl] .simplebar-track.simplebar-vertical {
+[data-simplebar-direction="rtl"] .simplebar-track.simplebar-vertical {
   right: auto;
   left: 0;
 }
@@ -888,29 +914,29 @@ a.fg-emoji-picker-close-button {
   background-color: #eaeaf1 !important;
 }
 
-body[data-layout-mode=dark] .fg-emoji-picker {
+body[data-layout-mode="dark"] .fg-emoji-picker {
   background-color: #2e2e2e;
 }
-body[data-layout-mode=dark] .fg-emoji-picker * {
+body[data-layout-mode="dark"] .fg-emoji-picker * {
   color: #757575 !important;
 }
-body[data-layout-mode=dark] .fg-emoji-picker .fg-emoji-picker-categories {
+body[data-layout-mode="dark"] .fg-emoji-picker .fg-emoji-picker-categories {
   background-color: #333333 !important;
 }
-body[data-layout-mode=dark] .fg-emoji-picker .fg-emoji-picker-categories svg {
+body[data-layout-mode="dark"] .fg-emoji-picker .fg-emoji-picker-categories svg {
   fill: #8f9198;
 }
-body[data-layout-mode=dark] .fg-emoji-picker .fg-emoji-picker-search input {
+body[data-layout-mode="dark"] .fg-emoji-picker .fg-emoji-picker-search input {
   background-color: #2e2e2e !important;
   border-color: #333333 !important;
 }
-body[data-layout-mode=dark] .fg-emoji-picker .fg-emoji-picker-search svg {
+body[data-layout-mode="dark"] .fg-emoji-picker .fg-emoji-picker-search svg {
   fill: #8f9198 !important;
 }
-body[data-layout-mode=dark] .fg-emoji-picker-grid > li {
+body[data-layout-mode="dark"] .fg-emoji-picker-grid > li {
   background-color: #2e2e2e;
 }
-body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
+body[data-layout-mode="dark"] a.fg-emoji-picker-close-button {
   background-color: #333333 !important;
 }
 
@@ -1142,10 +1168,10 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   bottom: 0;
 }
 .chat-user-img.online .user-status {
-  background-color: #06D6A0;
+  background-color: #06d6a0;
 }
 .chat-user-img.away .user-status {
-  background-color: #FFD166;
+  background-color: #ffd166;
 }
 
 .search-panel .form-control {
@@ -1186,20 +1212,24 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   background-color: var(--bs-border-color);
 }
 
-.chat-call-list, .chat-bookmark-list {
+.chat-call-list,
+.chat-bookmark-list {
   max-height: calc(100vh - 120px);
 }
 @media (max-width: 991.98px) {
-  .chat-call-list, .chat-bookmark-list {
+  .chat-call-list,
+  .chat-bookmark-list {
     height: calc(100vh - 125px);
   }
 }
-.chat-call-list li, .chat-bookmark-list li {
+.chat-call-list li,
+.chat-bookmark-list li {
   position: relative;
   padding: 10px 24px;
   border-bottom: 1px solid var(--bs-border-color);
 }
-.chat-call-list li:last-child, .chat-bookmark-list li:last-child {
+.chat-call-list li:last-child,
+.chat-bookmark-list li:last-child {
   border-bottom: 0;
 }
 
@@ -1216,7 +1246,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 }
 .profile-user .user-profile-img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .profile-user .profile-img-file-input {
   display: none;
@@ -1289,7 +1319,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 .audio-call-menu .btn {
   background-color: rgba(255, 255, 255, 0.25);
   -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
   border: none;
   border-radius: 8px;
   transition: all 0.5s ease;
@@ -1302,7 +1332,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   background-color: #fff;
 }
 .audio-call-menu .btn:hover i {
-  color: #6153CC;
+  color: #6153cc;
 }
 
 .user-chat-nav .nav-btn {
@@ -1411,10 +1441,19 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   border-radius: 3px;
 }
 @media (max-width: 575.98px) {
-  .chat-conversation .conversation-list .ctext-wrap-content .attached-file .attached-file-avatar {
+  .chat-conversation
+    .conversation-list
+    .ctext-wrap-content
+    .attached-file
+    .attached-file-avatar {
     display: none;
   }
-  .chat-conversation .conversation-list .ctext-wrap-content .attached-file .dropdown .dropdown-toggle {
+  .chat-conversation
+    .conversation-list
+    .ctext-wrap-content
+    .attached-file
+    .dropdown
+    .dropdown-toggle {
     display: block;
   }
 }
@@ -1466,7 +1505,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   max-width: 150px;
   height: 100px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .chat-conversation .conversation-list .message-img .message-img-link {
   position: absolute;
@@ -1505,20 +1544,39 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 }
 .chat-conversation .right .conversation-list .ctext-wrap .ctext-wrap-content {
   order: 2;
-  background: linear-gradient(to top, rgba(var(--bs-secondary-rgb), 1), rgba(var(--bs-primary-rgb), 1));
+  background: linear-gradient(
+    to top,
+    rgba(var(--bs-secondary-rgb), 1),
+    rgba(var(--bs-primary-rgb), 1)
+  );
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #fff;
   text-align: right;
 }
-.chat-conversation .right .conversation-list .ctext-wrap .ctext-wrap-content .replymessage-block {
+.chat-conversation
+  .right
+  .conversation-list
+  .ctext-wrap
+  .ctext-wrap-content
+  .replymessage-block {
   background-color: rgba(255, 255, 255, 0.9);
   border-color: rgba(var(--bs-primary-rgb), 1);
   color: #495057;
 }
-.chat-conversation .right .conversation-list .ctext-wrap .ctext-wrap-content .replymessage-block .conversation-name {
+.chat-conversation
+  .right
+  .conversation-list
+  .ctext-wrap
+  .ctext-wrap-content
+  .replymessage-block
+  .conversation-name {
   color: rgba(var(--bs-primary-rgb), 1);
 }
-.chat-conversation .right .conversation-list .ctext-wrap .ctext-wrap-content::after {
+.chat-conversation
+  .right
+  .conversation-list
+  .ctext-wrap
+  .ctext-wrap-content::after {
   content: "";
   position: absolute;
   bottom: 0px;
@@ -1539,7 +1597,11 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 .chat-conversation .right .conversation-list .conversation-name {
   justify-content: flex-end;
 }
-.chat-conversation .right .conversation-list .conversation-name .check-message-icon {
+.chat-conversation
+  .right
+  .conversation-list
+  .conversation-name
+  .check-message-icon {
   order: 1;
 }
 .chat-conversation .right .conversation-list .conversation-name .time {
@@ -1559,7 +1621,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .videocallModal .modal-content,
@@ -1569,7 +1631,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 }
 @media (max-width: 575.98px) {
   .videocallModal .modal-content,
-.groupvideocallModal .modal-content {
+  .groupvideocallModal .modal-content {
     min-height: 350px;
   }
 }
@@ -1584,7 +1646,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 .groupvideocallModal .video-call-title span {
   background-color: rgba(255, 255, 255, 0.4);
   -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 .videocallModal .videocall-overlay,
 .groupvideocallModal .videocall-overlay {
@@ -1593,14 +1655,19 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   top: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(180deg, rgba(52, 58, 64, 0.33) 10%, rgba(0, 0, 0, 0) 60%, rgba(52, 58, 64, 0.52) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(52, 58, 64, 0.33) 10%,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(52, 58, 64, 0.52) 100%
+  );
 }
 .videocallModal .video-call-menu a,
 .groupvideocallModal .video-call-menu a {
   border: none;
   background-color: rgba(255, 255, 255, 0.25);
   -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   transition: all 0.5s ease;
 }
 .videocallModal .video-call-menu a span,
@@ -1625,7 +1692,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 .chat-input-section {
   background-color: rgba(255, 255, 255, 0.01);
   -webkit-backdrop-filter: blur(7px);
-          backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
   position: relative;
   z-index: 1;
   max-width: 1200px;
@@ -1659,7 +1726,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   top: -18px;
   left: 16px;
   font-size: 12px;
-  color: #EF476F;
+  color: #ef476f;
 }
 .chat-input-section .show {
   display: block;
@@ -1693,7 +1760,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 }
 @media (max-width: 991.98px) {
   .replyCard,
-.file_Upload {
+  .file_Upload {
     bottom: -12px;
   }
 }
@@ -1704,7 +1771,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 }
 @media (max-width: 991.98px) {
   .replyCard.show,
-.file_Upload.show {
+  .file_Upload.show {
     transform: translateY(-86px);
   }
 }
@@ -1732,11 +1799,11 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 
 @-moz-document url-prefix() {
   .user-chat-topbar,
-.chat-input-section {
+  .chat-input-section {
     background-color: #f2f2f2 !important;
   }
-  [data-layout-mode=dark] .user-chat-topbar,
-[data-layout-mode=dark] .chat-input-section {
+  [data-layout-mode="dark"] .user-chat-topbar,
+  [data-layout-mode="dark"] .chat-input-section {
     background-color: #2e2e2e !important;
   }
 }
@@ -1756,7 +1823,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 
 .typing .dot {
   -webkit-animation: mercuryTypingAnimation 1.8s infinite ease-in-out;
-          animation: mercuryTypingAnimation 1.8s infinite ease-in-out;
+  animation: mercuryTypingAnimation 1.8s infinite ease-in-out;
   background-color: var(--bs-primary-rgb);
   border-radius: 50%;
   height: 5px;
@@ -1768,17 +1835,17 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 
 .typing .dot:nth-child(1) {
   -webkit-animation-delay: 200ms;
-          animation-delay: 200ms;
+  animation-delay: 200ms;
 }
 
 .typing .dot:nth-child(2) {
   -webkit-animation-delay: 300ms;
-          animation-delay: 300ms;
+  animation-delay: 300ms;
 }
 
 .typing .dot:nth-child(3) {
   -webkit-animation-delay: 400ms;
-          animation-delay: 400ms;
+  animation-delay: 400ms;
 }
 
 .typing .dot:last-child {
@@ -1851,7 +1918,12 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   top: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 10%,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
   display: flex;
   height: 100%;
   color: rgba(255, 255, 255, 0.6);
@@ -1865,7 +1937,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   width: 100%;
   height: 250px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media (max-width: 991px) {
   .user-profile-img .profile-img {
@@ -1881,7 +1953,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 
 .user-profile-image {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .user-profile-desc {
@@ -1919,7 +1991,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   width: 110px;
   height: 76px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .profile-media-img .media-img-list a .bg-overlay {
   display: flex;
@@ -1943,7 +2015,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 }
 
 .favourite-btn.active .bx-heart {
-  color: #EF476F;
+  color: #ef476f;
 }
 .favourite-btn.active .bx-heart:before {
   content: "\ed36";
@@ -2043,7 +2115,7 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   }
 }
 
-.auth-pass-inputgroup input[type=text] + .btn .ri-eye-fill:before {
+.auth-pass-inputgroup input[type="text"] + .btn .ri-eye-fill:before {
   content: "\ec80";
 }
 
@@ -2066,4 +2138,4 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   z-index: 9;
   background-color: var(--bs-card-bg);
   padding: 2px 16px;
-}/*# sourceMappingURL=app.css.map */
+} /*# sourceMappingURL=app.css.map */
