@@ -1,14 +1,13 @@
 import React from "react";
 import "../src/assets/scss/app.scss";
-import Routes from "./routes";
+import Index from "./Routes";
 import SimpleBar from "simplebar";
-import Layout from "./layout";
+import Route from "./Routes/index";
 
 function App() {
   return (
     <React.Fragment>
-      {/* <Routes></Routes> */}
-      <Layout />
+      <Route />
     </React.Fragment>
   );
 }

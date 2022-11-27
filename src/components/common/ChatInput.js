@@ -4,15 +4,15 @@ import React from "react";
 
 const ChatInput = () => {
   return (
-    <div class="position-relative">
-      <div class="chat-input-section p-4 border-top">
-        <form id="chatinput-form" enctype="multipart/form-data">
-          <div class="row g-0 align-items-center">
-            <div class="file_Upload"></div>
-            <div class="col-auto">
-              <div class="chat-input-links me-md-2">
+    <div className="position-relative">
+      <div className="chat-input-section p-4 border-top">
+        <form id="chatinput-form" encType="multipart/form-data">
+          <div className="row g-0 align-items-center">
+            <div className="file_Upload"></div>
+            <div className="col-auto">
+              <div className="chat-input-links me-md-2">
                 <div
-                  class="links-list-item"
+                  className="links-list-item"
                   data-bs-toggle="tooltip"
                   data-bs-trigger="hover"
                   data-bs-placement="top"
@@ -20,17 +20,17 @@ const ChatInput = () => {
                 >
                   <button
                     type="button"
-                    class="btn btn-link text-decoration-none btn-lg waves-effect"
+                    className="btn btn-link text-decoration-none btn-lg waves-effect"
                     data-bs-toggle="collapse"
                     data-bs-target="#chatinputmorecollapse"
                     aria-expanded="false"
                     aria-controls="chatinputmorecollapse"
                   >
-                    <i class="bx bx-dots-horizontal-rounded align-middle"></i>
+                    <i className="bx bx-dots-horizontal-rounded align-middle"></i>
                   </button>
                 </div>
                 <div
-                  class="links-list-item"
+                  className="links-list-item"
                   data-bs-toggle="tooltip"
                   data-bs-trigger="hover"
                   data-bs-placement="top"
@@ -38,64 +38,66 @@ const ChatInput = () => {
                 >
                   <button
                     type="button"
-                    class="btn btn-link text-decoration-none btn-lg waves-effect emoji-btn"
+                    className="btn btn-link text-decoration-none btn-lg waves-effect emoji-btn"
                     id="emoji-btn"
                   >
-                    <i class="bx bx-smile align-middle"></i>
+                    <i className="bx bx-smile align-middle"></i>
                   </button>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="position-relative">
-                <div class="chat-input-feedback">Please Enter a Message</div>
+            <div className="col">
+              <div className="position-relative">
+                <div className="chat-input-feedback">
+                  Please Enter a Message
+                </div>
                 <input
-                  autocomplete="off"
+                  complete="off"
                   type="text"
-                  class="form-control form-control-lg bg-light border-0 chat-input"
-                  autofocus
+                  className="form-control form-control-lg bg-light border-0 chat-input"
+                  autoFocus
                   id="chat-input"
                   placeholder="Type your message..."
                 />
-                <div class="chat-input-typing">
-                  <span class="typing-user d-flex">
+                <div className="chat-input-typing">
+                  <span className="typing-user d-flex">
                     Victoria Lane is typing
-                    <span class="typing ms-2">
-                      <span class="dot"></span>
-                      <span class="dot"></span>
-                      <span class="dot"></span>
+                    <span className="typing ms-2">
+                      <span className="dot"></span>
+                      <span className="dot"></span>
+                      <span className="dot"></span>
                     </span>
                   </span>
                 </div>
               </div>
             </div>
-            <div class="col-auto">
-              <div class="chat-input-links ms-2 gap-md-1">
+            <div className="col-auto">
+              <div className="chat-input-links ms-2 gap-md-1">
                 <div
-                  class="links-list-item d-none d-sm-block"
+                  className="links-list-item d-none d-sm-block"
                   data-bs-container=".chat-input-links"
                   data-bs-toggle="popover"
                   data-bs-trigger="focus"
                   data-bs-html="true"
                   data-bs-placement="top"
-                  data-bs-content="<div class='loader-line'><div class='line'></div><div class='line'></div><div class='line'></div><div class='line'></div><div class='line'></div></div>"
+                  data-bs-content="<div className='loader-line'><div className='line'></div><div className='line'></div><div className='line'></div><div className='line'></div><div className='line'></div></div>"
                 >
                   <button
                     type="button"
-                    class="btn btn-link text-decoration-none btn-lg waves-effect"
-                    onclick="audioPermission()"
+                    className="btn btn-link text-decoration-none btn-lg waves-effect"
+                    // onClick="audioPermission()"
                   >
-                    <i class="bx bx-microphone align-middle"></i>
+                    <i className="bx bx-microphone align-middle"></i>
                   </button>
                 </div>
-                <div class="links-list-item">
+                <div className="links-list-item">
                   <button
                     type="submit"
-                    class="btn btn-primary btn-lg chat-send waves-effect waves-light"
+                    className="btn btn-primary btn-lg chat-send waves-effect waves-light"
                     data-bs-toggle="collapse"
                     data-bs-target=".chat-input-collapse1.show"
                   >
-                    <i class="bx bxs-send align-middle" id="submit-btn"></i>
+                    <i className="bx bxs-send align-middle" id="submit-btn"></i>
                   </button>
                 </div>
               </div>
@@ -103,134 +105,134 @@ const ChatInput = () => {
           </div>
         </form>
         <div
-          class="chat-input-collapse chat-input-collapse1 collapse"
+          className="chat-input-collapse chat-input-collapse1 collapse"
           id="chatinputmorecollapse"
         >
-          <div class="card mb-0">
-            <div class="card-body py-3">
+          <div className="card mb-0">
+            <div className="card-body py-3">
               {/* <!-- Swiper --> */}
-              <div class="swiper chatinput-links">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="text-center px-2 position-relative">
+              <div className="swiper chatinput-links">
+                <div className="swiper-wrapper">
+                  <div className="swiper-slide">
+                    <div className="text-center px-2 position-relative">
                       <div>
                         <input
                           id="attachedfile-input"
                           type="file"
-                          class="d-none"
+                          className="d-none"
                           accept=".zip,.rar,.7zip,.pdf"
                           multiple
                         />
                         <label
-                          for="attachedfile-input"
-                          class="avatar-sm mx-auto stretched-link"
+                          htmlFor="attachedfile-input"
+                          className="avatar-sm mx-auto stretched-link"
                         >
-                          <span class="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
-                            <i class="bx bx-paperclip"></i>
+                          <span className="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
+                            <i className="bx bx-paperclip"></i>
                           </span>
                         </label>
                       </div>
-                      <h5 class="fs-11 text-uppercase mt-3 mb-0 text-body text-truncate">
+                      <h5 className="fs-11 text-uppercase mt-3 mb-0 text-body text-truncate">
                         Attached
                       </h5>
                     </div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="text-center px-2">
-                      <div class="avatar-sm mx-auto">
-                        <div class="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
-                          <i class="bx bxs-camera"></i>
+                  <div className="swiper-slide">
+                    <div className="text-center px-2">
+                      <div className="avatar-sm mx-auto">
+                        <div className="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
+                          <i className="bx bxs-camera"></i>
                         </div>
                       </div>
-                      <h5 class="fs-11 text-uppercase text-truncate mt-3 mb-0">
+                      <h5 className="fs-11 text-uppercase text-truncate mt-3 mb-0">
                         <a
                           href="#"
-                          class="text-body stretched-link"
-                          onclick="cameraPermission()"
+                          className="text-body stretched-link"
+                          // onClick="cameraPermission()"
                         >
                           Camera
                         </a>
                       </h5>
                     </div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="text-center px-2 position-relative">
+                  <div className="swiper-slide">
+                    <div className="text-center px-2 position-relative">
                       <div>
                         <input
                           id="galleryfile-input"
                           type="file"
-                          class="d-none"
+                          className="d-none"
                           accept="image/png, image/gif, image/jpeg"
                           multiple
                         />
                         <label
-                          for="galleryfile-input"
-                          class="avatar-sm mx-auto stretched-link"
+                          htmlFor="galleryfile-input"
+                          className="avatar-sm mx-auto stretched-link"
                         >
-                          <span class="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
-                            <i class="bx bx-images"></i>
+                          <span className="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
+                            <i className="bx bx-images"></i>
                           </span>
                         </label>
                       </div>
-                      <h5 class="fs-11 text-uppercase text-truncate mt-3 mb-0">
+                      <h5 className="fs-11 text-uppercase text-truncate mt-3 mb-0">
                         Gallery
                       </h5>
                     </div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="text-center px-2">
+                  <div className="swiper-slide">
+                    <div className="text-center px-2">
                       <div>
                         <input
                           id="audiofile-input"
                           type="file"
-                          class="d-none"
+                          className="d-none"
                           accept="audio/*"
                           multiple
                         />
                         <label
-                          for="audiofile-input"
-                          class="avatar-sm mx-auto stretched-link"
+                          htmlFor="audiofile-input"
+                          className="avatar-sm mx-auto stretched-link"
                         >
-                          <span class="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
-                            <i class="bx bx-headphone"></i>
+                          <span className="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
+                            <i className="bx bx-headphone"></i>
                           </span>
                         </label>
                       </div>
-                      <h5 class="fs-11 text-uppercase text-truncate mt-3 mb-0">
+                      <h5 className="fs-11 text-uppercase text-truncate mt-3 mb-0">
                         Audio
                       </h5>
                     </div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="text-center px-2">
-                      <div class="avatar-sm mx-auto">
-                        <div class="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
-                          <i class="bx bx-current-location"></i>
+                  <div className="swiper-slide">
+                    <div className="text-center px-2">
+                      <div className="avatar-sm mx-auto">
+                        <div className="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
+                          <i className="bx bx-current-location"></i>
                         </div>
                       </div>
 
-                      <h5 class="fs-11 text-uppercase text-truncate mt-3 mb-0">
+                      <h5 className="fs-11 text-uppercase text-truncate mt-3 mb-0">
                         <a
                           href="#"
-                          class="text-body stretched-link"
-                          onclick="getLocation()"
+                          className="text-body stretched-link"
+                          // onClick="getLocation()"
                         >
                           Location
                         </a>
                       </h5>
                     </div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="text-center px-2">
-                      <div class="avatar-sm mx-auto">
-                        <div class="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
-                          <i class="bx bxs-user-circle"></i>
+                  <div className="swiper-slide">
+                    <div className="text-center px-2">
+                      <div className="avatar-sm mx-auto">
+                        <div className="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
+                          <i className="bx bxs-user-circle"></i>
                         </div>
                       </div>
-                      <h5 class="fs-11 text-uppercase text-truncate mt-3 mb-0">
+                      <h5 className="fs-11 text-uppercase text-truncate mt-3 mb-0">
                         <a
                           href="#"
-                          class="text-body stretched-link"
+                          className="text-body stretched-link"
                           data-bs-toggle="modal"
                           data-bs-target=".contactModal"
                         >
@@ -240,15 +242,15 @@ const ChatInput = () => {
                     </div>
                   </div>
 
-                  <div class="swiper-slide d-block d-sm-none">
-                    <div class="text-center px-2">
-                      <div class="avatar-sm mx-auto">
-                        <div class="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
-                          <i class="bx bx-microphone"></i>
+                  <div className="swiper-slide d-block d-sm-none">
+                    <div className="text-center px-2">
+                      <div className="avatar-sm mx-auto">
+                        <div className="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
+                          <i className="bx bx-microphone"></i>
                         </div>
                       </div>
-                      <h5 class="fs-11 text-uppercase text-truncate mt-3 mb-0">
-                        <a href="#" class="text-body stretched-link">
+                      <h5 className="fs-11 text-uppercase text-truncate mt-3 mb-0">
+                        <a href="#" className="text-body stretched-link">
                           Audio
                         </a>
                       </h5>
@@ -260,21 +262,21 @@ const ChatInput = () => {
           </div>
         </div>
       </div>
-      <div class="replyCard">
-        <div class="card mb-0">
-          <div class="card-body py-3">
-            <div class="replymessage-block mb-0 d-flex align-items-start">
-              <div class="flex-grow-1">
-                <h5 class="conversation-name"></h5>
-                <p class="mb-0"></p>
+      <div className="replyCard">
+        <div className="card mb-0">
+          <div className="card-body py-3">
+            <div className="replymessage-block mb-0 d-flex align-items-start">
+              <div className="flex-grow-1">
+                <h5 className="conversation-name"></h5>
+                <p className="mb-0"></p>
               </div>
-              <div class="flex-shrink-0">
+              <div className="flex-shrink-0">
                 <button
                   type="button"
                   id="close_toggle"
-                  class="btn btn-sm btn-link mt-n2 me-n3 fs-18"
+                  className="btn btn-sm btn-link mt-n2 me-n3 fs-18"
                 >
-                  <i class="bx bx-x align-middle"></i>
+                  <i className="bx bx-x align-middle"></i>
                 </button>
               </div>
             </div>

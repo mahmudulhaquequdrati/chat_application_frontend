@@ -13,10 +13,10 @@ const ConversationUser = () => {
             <div className="d-flex align-items-center">
               <div className="flex-shrink-0 d-block d-lg-none me-3">
                 <a
-                  href="javascript: void(0);"
-                  className="btn-primary user-chat-remove fs-18 p-1"
+                  // href="javascript: void(0);"
+                  className="btn-primary  user-chat-remove fs-18 p-1"
                 >
-                  <i className="bx bx-chevron-left align-middle"></i>
+                  <i className="bx bx-chevron-left align-middle text-white"></i>
                 </a>
               </div>
               <div className="flex-grow-1 overflow-hidden">
@@ -188,7 +188,10 @@ const ConversationUser = () => {
               <img src={img1} alt="" />
             </div>
             <div className="user-chat-content">
-              <div className="ctext-wrap">
+              <div className="conversation">
+                <p className="chat-msg-item">Hello</p>
+              </div>
+              {/* <div className="ctext-wrap">
                 <div className="message-img mb-0">
                   <div className="message-img-list">
                     <div>
@@ -196,8 +199,8 @@ const ConversationUser = () => {
                         src="https://www.youtube.com/embed/PHcgN1GTjdU"
                         title="YouTube video"
                         className="w-100 rounded"
-                        autoplay
-                        allowfullscreen
+                        autoPlay
+                        allowFullScreen
                       ></iframe>
                     </div>
 
@@ -261,7 +264,7 @@ const ConversationUser = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="conversation-name">
                 <small className="text-muted time">11:45 am</small>
                 <span className="text-success check-message-icon">

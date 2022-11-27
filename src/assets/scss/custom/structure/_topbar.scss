@@ -1,0 +1,58 @@
+//
+// topbar.scss
+//
+
+.topbar {
+  background-color: $topbar-bg;
+  width: 100%;
+  height: $topbar-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .topbar_icons i {
+    color: $gray-500;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+
+    &:hover {
+      background-color: $gray-800;
+    }
+  }
+  .topbar_search {
+    width: 23rem;
+    padding: 6px 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: $gray-400;
+    // change placeholder text color
+    &::placeholder {
+      color: $gray-500;
+      font-size: 14px;
+    }
+    &:active {
+      border: none;
+      outline: none;
+    }
+    @media screen and (max-width: 576px) {
+      width: 10rem;
+    }
+  }
+  .topbar_search_wrapper {
+    i {
+      color: $gray-500;
+      font-size: 18px;
+      align-items: center;
+      display: flex;
+      padding-left: 8px;
+      padding-top: 2px;
+    }
+  }
+}
+
+.conversation {
+  background-color: $conversation-bg !important;
+  color: $white;
+}

@@ -25,9 +25,28 @@ import Contact from "../components/common/Modals/Contact";
 
 const Layout = () => {
   return (
-    <div className="">
-      <ConversationUser />
-      <ChatInput />
+    <div className="topbar ">
+      <div className="d-flex gap-2 align-items-center h-100 topbar_icons  ps-2 ps-sm-3">
+        <i class="bx bxs-inbox"></i>
+        <i class="bx bx-calendar"></i>
+        <i class="bx bxs-contact"></i>
+        <i class="bx bx-stats"></i>
+      </div>
+      <form class="d-flex bg-topbar_search rounded topbar_search_wrapper">
+        <i class="bx bx-search-alt-2"></i>
+        <input
+          class="topbar_search h-75 bg-topbar_search"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <i class="bx bx-filter pe-2"></i>
+      </form>
+      <div className="topbar_icons pe-2">
+        <i class="bx bx-help-circle "></i>
+        <i class="bx bx-cog "></i>
+        <i class="bx bxl-google"></i>
+      </div>
     </div>
   );
 };
