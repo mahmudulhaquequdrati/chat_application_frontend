@@ -31,15 +31,17 @@ File: Main Css File
 @import "custom/components/preloader";
 
 // Plugins
-@import "custom/plugins/custom-scrollbar";
 @import "custom/plugins/emoji-picker";
+@import "custom/plugins/custom-scrollbar";
 
 // structure
 @import "custom/structure/sidemenu";
 @import "custom/structure/topbar";
+@import "custom/structure/conversation";
 
 // Pages
 @import "custom/pages/chat-leftsidebar";
 @import "custom/pages/user-chat";
 @import "custom/pages/user-profile-details";
 @import "custom/pages/authentication";
+@import "custom/pages/404";

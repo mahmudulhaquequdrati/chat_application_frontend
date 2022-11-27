@@ -14,19 +14,6 @@ const AuthProtected = ({ children }) => {
   ) : (
     children
   );
-  // const { userProfile, loading, token } = useProfile();
-  // useEffect(() => {
-  //   if (userProfile && !loading && token) {
-  //     setAuthorization(token);
-  //   } else if (!userProfile && loading && !token) {
-  //     dispatch(logoutUser());
-  //   }
-  // }, [token, userProfile, loading, dispatch]);
-
-  // if (!userProfile && loading && !token) {
-  //   return (
-  //     <Navigate to={{ pathname: "/login", state: { from: props.location } }} />
-  //   );
   // }
 };
 

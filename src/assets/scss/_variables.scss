@@ -13,7 +13,7 @@ $sidebar-sub-bg: var(--#{$variable-prefix}card-bg);
 $sidebar-shadow: var(--#{$variable-prefix}sidebar-shadow);
 //top bar
 $topbar-bg: #001b38;
-$topbar-height: 50px;
+$topbar-height: 45px;
 
 // Display
 $display-none: none;
@@ -102,6 +102,7 @@ $yellow: #ffd166;
 $green: #06d6a0;
 $teal: #050505;
 $cyan: #50a5f1;
+$darkBlue: #1a46ab;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -124,6 +125,7 @@ $colors: (
 
 // scss-docs-start theme-color-variables
 $primary: $blue;
+$dark-primary: $darkBlue;
 $secondary: $indigo;
 $success: $green;
 $info: $cyan;
@@ -148,6 +150,8 @@ $theme-colors: (
   "dark": $dark,
   "white": $white,
   "topbar_search": #4d6074,
+  "topbar_icon_color": $gray-400,
+  "dark-primary": $dark-primary,
 );
 // scss-docs-end theme-colors-map
 
@@ -546,7 +550,7 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px,
+  xl: 1340px,
   xxl: 1320px,
 );
 // scss-docs-end container-max-widths

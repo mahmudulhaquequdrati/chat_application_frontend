@@ -1,0 +1,25 @@
+.grid-container {
+  margin-top: 10px;
+  height: calc(100vh - 56px);
+  .compose-btn {
+    border-radius: 18px 0 0 18px;
+    padding: 2px 14px 2px 18px;
+    background-color: #377df0;
+    color: $white;
+    .compose {
+      font-size: 12px;
+    }
+  }
+  .cheveromDown {
+    border-radius: 0 18px 18px 0;
+    height: 100%;
+    padding: 6.5px 0;
+  }
+  .sub_menu {
+    padding-left: 37px;
+  }
+  .menus {
+    max-height: calc(100vh - 126px);
+    overflow-y: auto;
+  }
+}

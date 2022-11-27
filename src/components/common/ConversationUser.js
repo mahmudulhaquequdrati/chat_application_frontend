@@ -2,7 +2,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import img1 from "../../assets/images/users/avatar-2.jpg";
-import "../../../node_modules/boxicons/css/boxicons.min.css";
 
 const ConversationUser = () => {
   return (

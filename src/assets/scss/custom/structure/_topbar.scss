@@ -10,7 +10,8 @@
   justify-content: space-between;
   align-items: center;
 
-  .topbar_icons i {
+  .topbar_icons i,
+  .icons {
     color: $gray-500;
     padding: 5px;
     border-radius: 5px;
@@ -41,6 +42,7 @@
     }
   }
   .topbar_search_wrapper {
+    border-radius: 8px;
     i {
       color: $gray-500;
       font-size: 18px;
