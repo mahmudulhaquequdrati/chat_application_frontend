@@ -12,9 +12,9 @@ const TopBar = () => {
         <FeatherIcon icon="bar-chart-2" className=" icons" size={30} />
       </div>
       <form className="d-flex bg-topbar_search topbar_search_wrapper">
-        <i className="bx bx-search-alt-2"></i>
+        <i className="bx bx-search-alt-2 fs-6"></i>
         <input
-          className="topbar_search h-75 bg-topbar_search"
+          className="topbar_search bg-topbar_search"
           type="search"
           placeholder="Search"
           aria-label="Search"

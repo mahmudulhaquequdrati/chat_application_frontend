@@ -7,6 +7,7 @@ import AuthProtected from "./AuthProtected";
 import Inbox from "../pages/Inbox";
 import NotFound from "../pages/NotFound";
 import ConversationLayout from "../layout/ConversationLayout";
+import GroupInbox from "../layout/common/GroupInbox";
 
 const Index = () => {
   return (
@@ -21,7 +22,8 @@ const Index = () => {
           }
         >
           <Route path="app" element={<ConversationLayout />}>
-            <Route path="inbox" element={<Inbox />} />
+            <Route path="message" element={<GroupInbox />} />
+            <Route path="*" element={<Navigate to="/404" />} />
           </Route>
         </Route>
 

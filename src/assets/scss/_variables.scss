@@ -133,6 +133,7 @@ $warning: $yellow;
 $danger: $red;
 $light: $gray-300;
 $dark: $gray-800;
+$gray_light: #77787a;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -152,6 +153,7 @@ $theme-colors: (
   "topbar_search": #4d6074,
   "topbar_icon_color": $gray-400,
   "dark-primary": $dark-primary,
+  "gray_light": $gray_light,
 );
 // scss-docs-end theme-colors-map
 
@@ -649,6 +651,10 @@ $font-size-base: 0.875rem; // Assumes the browser default, typically `16px`
 $font-size-sm: $font-size-base * 0.875;
 $font-size-lg: $font-size-base * 1.25;
 
+// custom
+$font-size-xs: $font-size-base * 0.75;
+$font-size-xs2: $font-size-base * 0.85;
+
 $font-weight-lighter: lighter;
 $font-weight-light: 300;
 $font-weight-normal: 400;
@@ -677,6 +683,8 @@ $font-sizes: (
   4: $h4-font-size,
   5: $h5-font-size,
   6: $h6-font-size,
+  7: $font-size-xs,
+  8: $font-size-xs2,
 );
 // scss-docs-end font-sizes
 

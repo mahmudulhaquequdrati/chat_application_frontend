@@ -23,15 +23,16 @@
   }
   .topbar_search {
     width: 23rem;
-    padding: 6px 5px;
+    padding: 2px 5px;
     border-radius: 5px;
     border: none;
     outline: none;
     color: $gray-400;
+    font-size: 0.87rem;
     // change placeholder text color
     &::placeholder {
       color: $gray-500;
-      font-size: 14px;
+      font-size: 12px;
     }
     &:active {
       border: none;
