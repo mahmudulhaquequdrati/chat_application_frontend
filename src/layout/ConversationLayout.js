@@ -8,7 +8,7 @@ import { Outlet } from "react-router-dom";
 
 const ConversationLayout = () => {
   return (
-    <div className="conversation_grid  mx-2 grid-container mt-1">
+    <div className="conversation_grid  mx-2 grid-container mt-1 border">
       {/* new message */}
       <div className=" px-0 mt-2">
         <div className="d-flex align-items-center px-0">

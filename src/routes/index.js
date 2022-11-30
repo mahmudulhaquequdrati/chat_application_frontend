@@ -4,7 +4,6 @@ import Login from "../components/common/Login";
 import Register from "../components/common/Register";
 import Layout from "../layout/Layout";
 import AuthProtected from "./AuthProtected";
-import Inbox from "../pages/Inbox";
 import NotFound from "../pages/NotFound";
 import ConversationLayout from "../layout/ConversationLayout";
 import GroupInbox from "../layout/common/GroupInbox";
@@ -13,7 +12,7 @@ const Index = () => {
   return (
     <React.Fragment>
       <Routes>
-        <Route path="/" element={<Navigate to="/app" />} />
+        <Route path="/" element={<Navigate to="/app/message" />} />
         <Route
           element={
             <AuthProtected>

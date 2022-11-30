@@ -5,7 +5,7 @@ import React from "react";
 const ChatInput = () => {
   return (
     <div className="position-relative">
-      <div className="chat-input-section p-4 border-top">
+      <div className="chat-input-section p-3 pb-4 border-top">
         <form id="chatinput-form" encType="multipart/form-data">
           <div className="row g-0 align-items-center">
             <div className="file_Upload"></div>
@@ -47,14 +47,14 @@ const ChatInput = () => {
               </div>
             </div>
             <div className="col">
-              <div className="position-relative">
+              <div className="position-relative ">
                 <div className="chat-input-feedback">
                   Please Enter a Message
                 </div>
                 <input
                   complete="off"
                   type="text"
-                  className="form-control form-control-lg bg-light border-0 chat-input"
+                  className="form-control form-control-lg bg-input_bg border-0 chat-input"
                   autoFocus
                   id="chat-input"
                   placeholder="Type your message..."
@@ -104,163 +104,7 @@ const ChatInput = () => {
             </div>
           </div>
         </form>
-        <div
-          className="chat-input-collapse chat-input-collapse1 collapse"
-          id="chatinputmorecollapse"
-        >
-          <div className="card mb-0">
-            <div className="card-body py-3">
-              {/* <!-- Swiper --> */}
-              <div className="swiper chatinput-links">
-                <div className="swiper-wrapper">
-                  <div className="swiper-slide">
-                    <div className="text-center px-2 position-relative">
-                      <div>
-                        <input
-                          id="attachedfile-input"
-                          type="file"
-                          className="d-none"
-                          accept=".zip,.rar,.7zip,.pdf"
-                          multiple
-                        />
-                        <label
-                          htmlFor="attachedfile-input"
-                          className="avatar-sm mx-auto stretched-link"
-                        >
-                          <span className="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
-                            <i className="bx bx-paperclip"></i>
-                          </span>
-                        </label>
-                      </div>
-                      <h5 className="fs-11 text-uppercase mt-3 mb-0 text-body text-truncate">
-                        Attached
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="swiper-slide">
-                    <div className="text-center px-2">
-                      <div className="avatar-sm mx-auto">
-                        <div className="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
-                          <i className="bx bxs-camera"></i>
-                        </div>
-                      </div>
-                      <h5 className="fs-11 text-uppercase text-truncate mt-3 mb-0">
-                        <a
-                          href="#"
-                          className="text-body stretched-link"
-                          // onClick="cameraPermission()"
-                        >
-                          Camera
-                        </a>
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="swiper-slide">
-                    <div className="text-center px-2 position-relative">
-                      <div>
-                        <input
-                          id="galleryfile-input"
-                          type="file"
-                          className="d-none"
-                          accept="image/png, image/gif, image/jpeg"
-                          multiple
-                        />
-                        <label
-                          htmlFor="galleryfile-input"
-                          className="avatar-sm mx-auto stretched-link"
-                        >
-                          <span className="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
-                            <i className="bx bx-images"></i>
-                          </span>
-                        </label>
-                      </div>
-                      <h5 className="fs-11 text-uppercase text-truncate mt-3 mb-0">
-                        Gallery
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="swiper-slide">
-                    <div className="text-center px-2">
-                      <div>
-                        <input
-                          id="audiofile-input"
-                          type="file"
-                          className="d-none"
-                          accept="audio/*"
-                          multiple
-                        />
-                        <label
-                          htmlFor="audiofile-input"
-                          className="avatar-sm mx-auto stretched-link"
-                        >
-                          <span className="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
-                            <i className="bx bx-headphone"></i>
-                          </span>
-                        </label>
-                      </div>
-                      <h5 className="fs-11 text-uppercase text-truncate mt-3 mb-0">
-                        Audio
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="swiper-slide">
-                    <div className="text-center px-2">
-                      <div className="avatar-sm mx-auto">
-                        <div className="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
-                          <i className="bx bx-current-location"></i>
-                        </div>
-                      </div>
-
-                      <h5 className="fs-11 text-uppercase text-truncate mt-3 mb-0">
-                        <a
-                          href="#"
-                          className="text-body stretched-link"
-                          // onClick="getLocation()"
-                        >
-                          Location
-                        </a>
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="swiper-slide">
-                    <div className="text-center px-2">
-                      <div className="avatar-sm mx-auto">
-                        <div className="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
-                          <i className="bx bxs-user-circle"></i>
-                        </div>
-                      </div>
-                      <h5 className="fs-11 text-uppercase text-truncate mt-3 mb-0">
-                        <a
-                          href="#"
-                          className="text-body stretched-link"
-                          data-bs-toggle="modal"
-                          data-bs-target=".contactModal"
-                        >
-                          Contacts
-                        </a>
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div className="swiper-slide d-block d-sm-none">
-                    <div className="text-center px-2">
-                      <div className="avatar-sm mx-auto">
-                        <div className="avatar-title fs-18 bg-soft-primary text-primary rounded-circle">
-                          <i className="bx bx-microphone"></i>
-                        </div>
-                      </div>
-                      <h5 className="fs-11 text-uppercase text-truncate mt-3 mb-0">
-                        <a href="#" className="text-body stretched-link">
-                          Audio
-                        </a>
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* check down */}
       </div>
       <div className="replyCard">
         <div className="card mb-0">

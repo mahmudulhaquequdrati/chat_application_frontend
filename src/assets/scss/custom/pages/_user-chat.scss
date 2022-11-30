@@ -48,13 +48,13 @@
 }
 
 .user-chat-topbar {
-  position: absolute;
+  // position: absolute;
   left: 0;
   right: 0;
-  top: 0;
+  // top: 20px;
   z-index: 1001;
   background-color: $card-bg;
-  border-bottom: 1px dashed $border-color;
+  // border-bottom: 1px dashed $border-color;
   max-width: $user-chat-width;
   margin: 0 auto;
   padding-left: 24px;
@@ -64,6 +64,15 @@
     position: fixed;
     background-color: rgba($white, 0.8);
   }
+}
+.chat-topbar-bg {
+  background-color: $chat-topbar-bg;
+}
+.tags_chat_user {
+  font-size: 11px;
+  padding-top: 2px;
+  padding-bottom: 0px;
+  background-color: #e9493a0c;
 }
 
 .call-close-btn {
@@ -126,7 +135,8 @@
 }
 
 .chat-conversation {
-  height: calc(100vh - 150px);
+  height: calc(100vh - 277px);
+  overflow-y: auto;
   max-width: $user-chat-width;
   margin: 0 auto;
 
@@ -145,8 +155,8 @@
   }
 
   .chat-conversation-list {
-    margin-top: 90px;
-    padding-top: 10px;
+    // margin-top: 90px;
+    // padding-top: 10px;
     margin-bottom: 0;
 
     > li {

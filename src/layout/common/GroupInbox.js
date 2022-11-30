@@ -4,11 +4,11 @@ import ConversationUser from "../../components/common/ConversationUser";
 
 const GroupInbox = () => {
   return (
-    <div className="groupInboxRow groupInbox-container cursor">
+    <div className="groupInboxRow groupInbox-container cursor ">
       <div
         className=""
         style={{
-          maxHeight: `calc(100vh - 56px)`,
+          maxHeight: `calc(100vh - 26px)`,
           overflowY: "auto",
         }}
       >
@@ -25,7 +25,7 @@ const GroupInbox = () => {
         </div>
         {/*  */}
         <div className="d-flex flex-column gap-1 px-2 py-1">
-          <div className="chat_background_active fs-8  position-relative border">
+          <div className="chat_background_active   position-relative border">
             <div className="">
               <div className="d-flex justify-content-between">
                 <p className="fw-medium m-0">James Colin</p>
@@ -53,7 +53,7 @@ const GroupInbox = () => {
             </div>
           </div>
 
-          <div className="chat_background fs-8  position-relative">
+          <div className="chat_background   position-relative">
             <div className="">
               <div className="d-flex justify-content-between">
                 <p className="fw-medium m-0">James Colin</p>
@@ -70,7 +70,7 @@ const GroupInbox = () => {
           </div>
         </div>
       </div>
-      <div className=" ">
+      <div className=" d-flex flex-column justify-content-between">
         <ConversationUser />
         <ChatInput />
       </div>

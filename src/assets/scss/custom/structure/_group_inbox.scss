@@ -37,7 +37,7 @@
   }
 }
 .groupInboxRow {
-  max-height: calc(100vh - 56px);
+  height: calc(100vh - 52px);
   overflow-y: auto;
   display: grid;
   grid-template-columns: 30% 70%;

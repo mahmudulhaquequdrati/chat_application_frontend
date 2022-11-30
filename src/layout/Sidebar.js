@@ -24,8 +24,8 @@ const submenus = [
   },
   {
     icon: <GoPrimitiveDot />,
-    text: "precisioncomp...",
-    number: 260,
+    text: "precisioncom..",
+    number: 60,
   },
 ];
 
@@ -78,7 +78,7 @@ const menusItem = [
 const Sidebar = () => {
   const [active, setActive] = useState("Aj Secure");
   return (
-    <div className="mt-3 menus fs-8">
+    <div className="mt-3 menus">
       {/* me */}
       <div className="ms-1">
         <div className="d-flex align-items-center">
