@@ -96,7 +96,7 @@ const Sidebar = () => {
 
           <p className="m-0 fw-semibold ms-1">Inbox</p>
         </div>
-        {/*  */}
+        {/* submenu inside inbox */}
         <div className="mt-1 sub_menu">
           {submenus.map((item, index) => (
             <div
@@ -115,7 +115,7 @@ const Sidebar = () => {
             </div>
           ))}
         </div>
-        {/*  */}
+        {/* other menus */}
         <div className="menus_items mt-2">
           {menusItem.map((item, index) => (
             <div className="d-flex align-items-center gap-1 mt-1 menu_item justify-content-between pe-2">
@@ -172,7 +172,7 @@ const Sidebar = () => {
             </div>
           </div>
         </div>
-        {/*  */}
+        {/* group */}
         <div className="mt-3">
           <div className="ms-1 ">
             <div className="d-flex align-items-center ">

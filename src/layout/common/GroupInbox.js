@@ -99,7 +99,7 @@ const GroupInbox = () => {
                       <p
                         className={`bg-white text-danger border border-danger  ${
                           inboxActive === item.id && "border-white "
-                        } px-1 float-end ms-1 rounded`}
+                        } inbox_tag float-end ms-1 rounded`}
                         key={index}
                       >
                         {tag}
