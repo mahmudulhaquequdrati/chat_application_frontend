@@ -21,6 +21,7 @@ const Index = () => {
           }
         >
           <Route path="app" element={<ConversationLayout />}>
+            <Route index="true" element={<Navigate to="message" />} />
             <Route path="message" element={<GroupInbox />} />
             <Route path="*" element={<Navigate to="/404" />} />
           </Route>

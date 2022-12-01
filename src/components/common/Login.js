@@ -6,7 +6,7 @@ const Login = () => {
   const onSubmitAction = (e) => {
     e.preventDefault();
     sessionStorage.setItem("authUser", JSON.stringify({ name: "John" }));
-    navigate("/app");
+    navigate("/app/message");
   };
   return (
     <div className="auth-bg">
