@@ -6,9 +6,9 @@ import { GoPrimitiveDot } from "react-icons/go";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import { AiOutlineUserAdd } from "react-icons/ai";
-const ConversationUser = () => {
+const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
   return (
-    <div id="users-chat" className="position-relative border">
+    <div id="users-chat" className="position-relative ">
       <div className="chat-topbar-bg">
         <div>
           <div className="d-flex justify-content-between align-items-center px-3 py-2 pb-0">
@@ -46,16 +46,16 @@ const ConversationUser = () => {
           </div>
         </div>
       </div>
-
-      <div className="pt-2 pb-3 user-chat-topbar border-primary">
+      {/* user-chat-topbar at line 50 */}
+      <div className="pt-2 pb-0 user-chat-topbar">
         <div className="row align-items-center ">
           <div className="col-sm-4 col-8">
             <div className="d-flex align-items-center">
-              <div className="flex-shrink-0 d-block d-lg-none me-3">
-                <a
-                  // href="javascript: void(0);"
-                  className="btn-primary  user-chat-remove fs-18 p-1"
-                >
+              <div
+                className="flex-shrink-0 d-block d-lg-none me-3"
+                onClick={() => setInboxDataActive(!inboxDataActive)}
+              >
+                <a className="btn-primary  user-chat-remove fs-18 p-1">
                   <i className="bx bx-chevron-left align-middle text-white"></i>
                 </a>
               </div>

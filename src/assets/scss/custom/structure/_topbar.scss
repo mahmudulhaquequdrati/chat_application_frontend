@@ -15,10 +15,26 @@
     color: $gray-500;
     padding: 5px;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 30px !important;
 
     &:hover {
       background-color: $gray-800;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 26px !important;
+    }
+  }
+  .calendar-icon {
+    color: $gray-500;
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 30px !important;
+
+    &:hover {
+      background-color: $gray-800;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 26px !important;
     }
   }
   .topbar_search {
@@ -38,6 +54,9 @@
       border: none;
       outline: none;
     }
+    @media screen and (max-width: 768px) {
+      width: 15rem;
+    }
     @media screen and (max-width: 576px) {
       width: 10rem;
     }
@@ -47,6 +66,14 @@
     i {
       color: $gray-500;
       font-size: 18px;
+      align-items: center;
+      display: flex;
+      padding-left: 8px;
+      padding-top: 2px;
+    }
+    .icon {
+      color: $gray-500;
+      font-size: 23px;
       align-items: center;
       display: flex;
       padding-left: 8px;

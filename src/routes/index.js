@@ -7,6 +7,7 @@ import AuthProtected from "./AuthProtected";
 import NotFound from "../pages/NotFound";
 import ConversationLayout from "../layout/ConversationLayout";
 import GroupInbox from "../layout/common/GroupInbox";
+import CommingSoon from "../pages/CommingSoon";
 
 const Index = () => {
   return (
@@ -23,7 +24,7 @@ const Index = () => {
           <Route path="app" element={<ConversationLayout />}>
             <Route index="true" element={<Navigate to="message" />} />
             <Route path="message" element={<GroupInbox />} />
-            <Route path="*" element={<Navigate to="/404" />} />
+            <Route path="*" element={<CommingSoon />} />
           </Route>
         </Route>
 

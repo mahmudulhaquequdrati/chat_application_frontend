@@ -35,12 +35,33 @@
       margin-bottom: 3px;
     }
   }
+  .chat_user_conversation {
+    position: relative;
+    @media screen and (max-width: 991px) {
+      position: absolute;
+      z-index: 1;
+      background-color: $sidebar-bg;
+      top: 45px;
+      left: -100%;
+      width: 100%;
+    }
+  }
+  .chat_user_conversation_active {
+    @media screen and (max-width: 991px) {
+      position: absolute;
+      left: 0px;
+      z-index: 2;
+      background-color: $sidebar-bg;
+    }
+  }
 }
 .groupInboxRow {
-  height: calc(100vh - 52px);
-  overflow-y: auto;
+  height: calc(100vh - 45px);
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 33% 67%;
+  @media screen and (max-width: 991px) {
+    grid-template-columns: 100%;
+  }
 }
 .inbox_tag {
   padding: 0 2px;

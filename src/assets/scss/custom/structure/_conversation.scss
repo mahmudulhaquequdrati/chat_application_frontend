@@ -1,10 +1,52 @@
 .conversation_grid {
   display: grid;
-  grid-template-columns: 15% 85%;
+  grid-template-columns: 20% 80%;
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 20% 80%;
+  }
+
+  @media screen and (min-width: 992px) {
+    grid-template-columns: 22% 78%;
+    border: 1px solid red;
+  }
+  @media screen and (min-width: 1201px) {
+    grid-template-columns: 17% 83%;
+  }
+  @media screen and (max-width: 991px) {
+    grid-template-columns: 5% 95%;
+  }
+
+  .conversation_menu_wrapper {
+    position: relative;
+    @media screen and (max-width: 991px) {
+      position: absolute;
+      z-index: 1;
+      background-color: $sidebar-bg;
+      top: 0;
+      left: -100%;
+    }
+  }
+  .conversation_menu_wrapper_active {
+    @media screen and (max-width: 991px) {
+      position: absolute;
+      left: 0px;
+      z-index: 2;
+      top: 45px;
+      padding-top: 10px;
+      background-color: $sidebar-bg;
+
+      margin-right: 10px;
+      // border: 3px solid red;
+      // border-right: 2px solid green;
+      box-shadow: 0 0 5px 0 #a3a3a3;
+    }
+  }
 }
 .grid-container {
-  margin-top: 10px;
-  height: calc(100vh - 50px);
+  margin-top: 0px;
+  height: calc(100vh - 62px);
+  // overflow-y: auto;
   .compose-btn {
     border-radius: 18px 0 0 18px;
     padding: 2px 14px 2px 18px;
@@ -13,52 +55,23 @@
     .compose {
       font-size: 12px;
     }
+    @media screen and (max-width: 768px) {
+      padding: 2px 7px 2px 10px;
+    }
   }
   .cheveromDown {
     border-radius: 0 18px 18px 0;
     height: 100%;
-    padding: 6.5px 0;
+    padding: 7px 14px 7px 16px;
+    @media screen and (max-width: 768px) {
+      padding: 7px 1px;
+    }
   }
-  .menus {
-    max-height: calc(100vh - 110px);
-    overflow-y: auto;
-    cursor: pointer;
-    .menu_item {
-      padding-left: 1.4rem;
-      margin-right: 3px;
-    }
-    .menu_item:hover {
-      background-color: #e2e4e9;
-      border-radius: 5px;
-    }
-    .menus_items {
-      .menu_item {
-        padding-left: 1.4rem;
-        margin-right: 3px;
-      }
-      .menu_item:hover {
-        background-color: #e2e4e9;
-        border-radius: 5px;
-      }
-    }
-    .sub_menu_item {
-      padding-left: 40px;
-      margin-right: 3px;
-    }
 
-    .sub_menu_item:hover {
-      background-color: #e2e4e9;
-      border-radius: 5px;
-    }
-    .sub_menu_item_active {
-      background-color: #e2e4e9;
-      border-radius: 5px;
-    }
-  }
   .sub_menu {
     padding: 0;
     .sub_menu_item {
-      padding-left: 40px;
+      padding-left: 39px;
       margin-right: 3px;
     }
     .sub_menu_item:hover {

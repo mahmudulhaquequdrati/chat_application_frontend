@@ -61,7 +61,7 @@
   padding-right: 24px;
 
   @media (max-width: 991.98px) {
-    position: fixed;
+    // position: fixed;
     background-color: rgba($white, 0.8);
   }
 }
@@ -135,14 +135,14 @@
 }
 
 .chat-conversation {
-  height: calc(100vh - 277px);
+  height: calc(100vh - 265px);
   overflow-y: auto;
-  max-width: $user-chat-width;
+  // max-width: $user-chat-width;
   margin: 0 auto;
 
   @media (max-width: 991.98px) {
-    height: calc(100vh - 80px);
-    margin-bottom: 78px;
+    height: calc(100vh - 265px);
+    // margin-bottom: 78px;
   }
 
   .simplebar-content-wrapper {

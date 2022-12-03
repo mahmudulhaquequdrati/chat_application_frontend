@@ -5,9 +5,9 @@ import backgoundImg from "../assets/images/emoji.png";
 const NotFound = () => {
   return (
     <div id="notfound">
-      <div class="notfound">
+      <div className="notfound">
         <div
-          class="notfound-404"
+          className="notfound-404"
           style={{
             backgroundImage: `url(${backgoundImg})`,
           }}

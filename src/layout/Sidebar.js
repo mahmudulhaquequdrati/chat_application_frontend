@@ -1,235 +1,190 @@
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
-import { FaSortUp, FaSortDown } from "react-icons/fa";
-import { MdPersonAddAlt1, MdPersonalInjury } from "react-icons/md";
-import { AiOutlineMessage } from "react-icons/ai";
 import { GoPrimitiveDot } from "react-icons/go";
-
-const submenus = [
-  {
-    icon: <MdPersonAddAlt1 />,
-    text: "Assaign to me",
-    number: 2,
-  },
-  {
-    icon: <MdPersonalInjury />,
-    text: "Shared with me",
-    number: 5,
-  },
-  {
-    icon: <AiOutlineMessage />,
-    text: "Discussion",
-    number: 3,
-  },
-  {
-    icon: <GoPrimitiveDot />,
-    text: "precisioncom..",
-    number: 60,
-  },
-];
-
-const menusItem = [
-  {
-    icon: "star",
-    text: "Starred",
-    // number: 2,
-  },
-  {
-    icon: "file-text",
-    text: "drafts",
-    // number: 5,
-  },
-  {
-    icon: "send",
-    text: "sent",
-  },
-  {
-    icon: "tag",
-    text: "Tags",
-    color: "primary",
-  },
-  {
-    icon: "tag",
-    text: "Test 2",
-    number: 15,
-    color: "warning",
-  },
-  {
-    icon: "tag",
-    text: "Jhon",
-    number: 55,
-    color: "success",
-  },
-  {
-    icon: "tag",
-    text: "Aron",
-    number: 85,
-    color: "danger",
-  },
-  {
-    icon: "tag",
-    text: "Development",
-    number: 250,
-    color: "warning",
-  },
-];
+import NavData from "./data/LayoutMenuData";
+import { Link } from "react-router-dom";
+import { Collapse } from "reactstrap";
 
 const Sidebar = () => {
-  const [active, setActive] = useState("Aj Secure");
+  const navData = NavData().props.children;
+  const [active, setActive] = useState("");
+
+  useEffect(() => {
+    const currentUrl = window.location.pathname;
+    navData.forEach((item) => {
+      if (item.subItems) {
+        item.subItems.forEach((subItem) => {
+          if (subItem.link === currentUrl) {
+            setActive(subItem.label);
+          }
+        });
+      } else {
+        if (item.link === currentUrl) {
+          setActive(item.label);
+        }
+      }
+    });
+  }, [navData]);
+
   return (
-    <div className="mt-3 menus">
-      {/* me */}
-      <div className="ms-1">
-        <div className="d-flex align-items-center">
-          <p className="m-0 text-muted">Me</p>
-          <FaSortUp className="text-muted" />
-        </div>
-      </div>
-      {/* end me */}
-      {/* inbox */}
-      <div className="">
-        {/*  */}
-        <div className="d-flex align-items-center gap-1 mt-1  menu_item ps-1">
-          <BsChevronDown size={14} />
-          <FeatherIcon icon="inbox" className=" icons" size={14} />
+    <div className="  menus" id="menus">
+      {/* start */}
+      <React.Fragment>
+        {(navData || []).map((item, index) => {
+          return (
+            <React.Fragment key={index}>
+              {item["isHeader"] ? (
+                <li className=" isHeader d-flex align-items-center gap-1">
+                  <span className="">{item?.label}</span>
+                  {item?.icon && (
+                    <div className="text-gray_light d-flex align-items-center">
+                      {item.icon}
+                    </div>
+                  )}
+                </li>
+              ) : item.subItems ? (
+                <li className="mt-1 pe-2">
+                  <Link
+                    onClick={item.click}
+                    to={item.link ? item.link : "/#"}
+                    className="d-flex align-items-center justify-content-between w-100 gap-1  menu_item ps-1 text-gray_light pe-2"
+                  >
+                    <div className="d-flex align-items-center gap-1">
+                      <BsChevronDown size={14} />
+                      <FeatherIcon
+                        icon={item.icon}
+                        className={`align-self-center icons ${
+                          item?.color ? `text-${item?.color}` : ""
+                        }`}
+                        size={14}
+                      />
+                      {item.label ? (
+                        <p className="m-0 fw-semibold ms-1 ">{item.label}</p>
+                      ) : null}
+                    </div>
+                    {item.number ? (
+                      <div className="d-flex align-items-center ">
+                        <span className="text-muted">{item?.number}</span>
+                      </div>
+                    ) : null}
+                  </Link>
+                  <Collapse
+                    className="pb-0 menu-dropdown"
+                    isOpen={item?.stateVariables}
+                  >
+                    <ul className={`sub_menu  mb-1 mt-1 `}>
+                      {(item.subItems || []).map((subItem, index) => (
+                        <React.Fragment key={index}>
+                          <li
+                            className={`d-flex align-items-center gap-1 mt-1 sub_menu_item pe-2 ${
+                              subItem.parentId === "team-inboxes"
+                                ? "fw-semibold"
+                                : ""
+                            } ${
+                              active === subItem.label
+                                ? "sub_menu_item_active"
+                                : ""
+                            } `}
+                          >
+                            <Link
+                              to={subItem.link ? subItem.link : "/#"}
+                              className="d-flex align-items-center  gap-1 justify-content-between  w-100"
+                              onClick={() => setActive(subItem.label)}
+                            >
+                              <div className="d-flex align-items-center text-gray_light gap-1">
+                                {subItem.icon && subItem.icon === "circle" ? (
+                                  <GoPrimitiveDot
+                                    size={14}
+                                    className={
+                                      subItem?.color
+                                        ? "text-" + subItem.color
+                                        : ""
+                                    }
+                                  />
+                                ) : (
+                                  <FeatherIcon
+                                    icon={subItem.icon}
+                                    className={`align-self-center icons   ${
+                                      subItem?.color
+                                        ? `text-${subItem?.color}`
+                                        : ""
+                                    }`}
+                                    size={14}
+                                  />
+                                )}
+                                {subItem.label ? (
+                                  <p
+                                    className={`m-0 ${
+                                      subItem.icon === "circle" ? "" : "ms-1"
+                                    }`}
+                                  >
+                                    {subItem.label}
+                                  </p>
+                                ) : null}
+                              </div>
 
-          <p className="m-0 fw-semibold ms-1">Inbox</p>
-        </div>
-        {/* submenu inside inbox */}
-        <div className="mt-1 sub_menu">
-          {submenus.map((item, index) => (
-            <div
-              className={`d-flex align-items-center gap-1 mt-1 sub_menu_item justify-content-between me-1 pe-2 ${
-                active === item.text ? "sub_menu_item_active" : ""
-              }`}
-              onClick={() => setActive(item.text)}
-            >
-              <div className="d-flex align-items-center text-gray_light gap-1">
-                {item.icon}
-                <p className="m-0 ms-1 text-gray_light">{item?.text}</p>
-              </div>
-              <div className="d-flex align-items-center ">
-                <span className="text-muted">{item.number}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-        {/* other menus */}
-        <div className="menus_items mt-2">
-          {menusItem.map((item, index) => (
-            <div className="d-flex align-items-center gap-1 mt-1 menu_item justify-content-between pe-2">
-              <div className="d-flex align-items-center text-gray_light gap-1">
-                <FeatherIcon
-                  icon={item?.icon}
-                  className={`icons ${item?.icon === "tag" ? "tag_icon" : ""} ${
-                    item?.color ? `text-${item?.color}` : ""
+                              {subItem.number ? (
+                                <div className="d-flex align-items-center ">
+                                  <span className="text-muted">
+                                    {subItem?.number}
+                                  </span>
+                                </div>
+                              ) : null}
+                            </Link>
+                          </li>
+                        </React.Fragment>
+                      ))}
+                    </ul>
+                  </Collapse>
+                </li>
+              ) : (
+                <li
+                  className={`d-flex align-items-center gap-1 mt-1 me-2  menu_item  ${
+                    active === item.label ? "sub_menu_item_active" : ""
                   } `}
-                  size={14}
-                />
-                <p
-                  className={`m-0 ms-1 text-gray_light ${
-                    item.number > 0 ? "fw-semibold" : ""
-                  }`}
+                  onClick={() => setActive(item.label)}
                 >
-                  {item?.text}
-                </p>
-              </div>
-              <div className="d-flex align-items-center ">
-                <span className="text-muted">{item?.number}</span>
-              </div>
-            </div>
-          ))}
+                  <Link
+                    className="d-flex align-items-center  gap-1 justify-content-between  w-100"
+                    to={item.link ? item.link : "/#"}
+                  >
+                    <div className="d-flex align-items-center text-gray_light gap-1">
+                      {item.icon ? (
+                        <div className="p-0">
+                          <FeatherIcon
+                            icon={item?.icon}
+                            className={`icon  ${
+                              item?.icon === "tag" ? "tag_icon" : ""
+                            } ${item?.color ? `text-${item?.color}` : ""} `}
+                            size={14}
+                          />
+                        </div>
+                      ) : null}
+                      {item.label ? (
+                        <p
+                          className={`m-0 ms-1 text-gray_light ${
+                            item.number > 0 ? "fw-semibold" : ""
+                          }`}
+                        >
+                          {item?.label}
+                        </p>
+                      ) : null}
+                    </div>
+                    {item.number ? (
+                      <div className="d-flex align-items-center ">
+                        <span className="text-muted">{item?.number}</span>
+                      </div>
+                    ) : null}
+                  </Link>
+                </li>
+              )}
+            </React.Fragment>
+          );
+        })}
+      </React.Fragment>
 
-          <div>
-            <div className="d-flex align-items-center gap-1 mt-1 justify-content-between pe-2 menu_item ps-1">
-              <div className="d-flex align-items-center gap-1">
-                <BsChevronDown size={14} />
-
-                <FeatherIcon
-                  icon="tag"
-                  className=" icons text-primary tag_icon"
-                  size={14}
-                />
-                <p className="m-0 ms-1 fw-semibold">HCPOD</p>
-              </div>
-              <div>
-                <p className="fw-semibold m-0">250</p>
-              </div>
-            </div>
-            <div className="d-flex align-items-center gap-1 mt-1 justify-content-between pe-2 sub_menu_item">
-              <div className="d-flex align-items-center gap-1">
-                <FeatherIcon
-                  icon="tag"
-                  className=" icons text-primary tag_icon"
-                  size={14}
-                />
-                <p className="m-0 ms-1 fw-semibold">HCPOD</p>
-              </div>
-              <div>
-                <p className="fw-semibold m-0">250</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* group */}
-        <div className="mt-3">
-          <div className="ms-1 ">
-            <div className="d-flex align-items-center ">
-              <p className="m-0 text-muted">Group Name</p>
-              <FaSortDown className="text-muted mb-1" />
-            </div>
-          </div>
-          <div>
-            <div className="d-flex align-items-center gap-1 mt-1 justify-content-between pe-2 menu_item ps-1">
-              <div className="d-flex align-items-center gap-1">
-                <BsChevronDown size={14} />
-
-                <FeatherIcon
-                  icon="inbox"
-                  className=" icons text-primary"
-                  size={14}
-                />
-                <p className="m-0 ms-1 fw-semibold">Team Inboxes</p>
-              </div>
-              <div>
-                <p className="fw-semibold m-0">2500</p>
-              </div>
-            </div>
-            <div
-              className={`d-flex align-items-center gap-1 mt-1 menu_item justify-content-between pe-2 sub_menu_item ${
-                active === "Aj Secure" ? "sub_menu_item_active" : ""
-              }`}
-            >
-              <div className="d-flex align-items-center text-gray_light gap-1">
-                <GoPrimitiveDot className="text-danger" />
-                <p className={`m-0 text-gray_light fw-semibold `}>Aj Secure</p>
-              </div>
-              <div className="d-flex align-items-center ">
-                <span className="text-muted">232</span>
-              </div>
-            </div>
-            <div className="d-flex align-items-center gap-1 mt-1 menu_item justify-content-between pe-2 sub_menu_item">
-              <div className="d-flex align-items-center text-gray_light gap-1">
-                <GoPrimitiveDot className="text-success" />
-                <p className={`m-0  text-gray_light fw-semibold`}>Demo Inbox</p>
-              </div>
-              <div className="d-flex align-items-center ">
-                <span className="text-muted">23</span>
-              </div>
-            </div>
-            <div className="d-flex align-items-center gap-1 mt-1 menu_item justify-content-between pe-2 sub_menu_item">
-              <div className="d-flex align-items-center text-gray_light gap-1">
-                <GoPrimitiveDot className="text-info" />
-                <p className={`m-0  text-gray_light`}>Dispatch SMS</p>
-              </div>
-              <div className="d-flex align-items-center ">
-                <span className="text-muted"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* end */}
     </div>
   );
 };

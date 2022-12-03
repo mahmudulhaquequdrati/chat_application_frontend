@@ -39,15 +39,23 @@ const messageTab = [
 const GroupInbox = () => {
   const [inboxActive, setInboxActive] = useState(1);
   const [messageTabActive, setMessageTabActive] = useState(1);
+  const [inboxDataActive, setInboxDataActive] = useState(false);
+
+  const handleInboxActive = (id) => {
+    setInboxActive(id);
+    setInboxDataActive(!inboxDataActive);
+  };
+
   return (
-    <div className="groupInboxRow groupInbox-container cursor ">
+    <div className="groupInboxRow groupInbox-container cursor">
       <div
         className=""
         style={{
           maxHeight: `calc(100vh - 26px)`,
-          overflowY: "auto",
+          // overflowY: "auto",
         }}
       >
+        {/* message Tab */}
         <div className="d-flex align-items-center justify-content-start  py-2">
           <div className="d-flex align-items-center border-bottom border-start w-100 gap-3 pb-2 pt-1 ps-3 cursor">
             {messageTab.map((item) => (
@@ -84,7 +92,7 @@ const GroupInbox = () => {
                   : "chat_background"
               }    position-relative `}
               key={item.id}
-              onClick={() => setInboxActive(item?.id)}
+              onClick={() => handleInboxActive(item?.id)}
             >
               <div className="">
                 <div className="d-flex justify-content-between">
@@ -114,8 +122,15 @@ const GroupInbox = () => {
           ))}
         </div>
       </div>
-      <div className=" d-flex flex-column justify-content-between">
-        <ConversationUser />
+      <div
+        className={` d-flex flex-column chat_user_conversation ${
+          inboxDataActive ? "chat_user_conversation_active " : ""
+        }`}
+      >
+        <ConversationUser
+          setInboxDataActive={setInboxDataActive}
+          inboxDataActive={inboxDataActive}
+        />
         <ChatInput />
       </div>
     </div>

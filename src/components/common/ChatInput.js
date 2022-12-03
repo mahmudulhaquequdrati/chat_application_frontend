@@ -5,10 +5,9 @@ import React from "react";
 const ChatInput = () => {
   return (
     <div className="position-relative">
-      <div className="chat-input-section p-3 pb-4 border-top">
-        <form id="chatinput-form" encType="multipart/form-data">
+      <div className="pt-3 pe-3 border-top">
+        <form id="chatinput-form">
           <div className="row g-0 align-items-center">
-            <div className="file_Upload"></div>
             <div className="col-auto">
               <div className="chat-input-links me-md-2">
                 <div
@@ -46,11 +45,8 @@ const ChatInput = () => {
                 </div>
               </div>
             </div>
-            <div className="col">
-              <div className="position-relative ">
-                <div className="chat-input-feedback">
-                  Please Enter a Message
-                </div>
+            <div className="col ">
+              <div className=" ">
                 <input
                   complete="off"
                   type="text"
@@ -105,27 +101,6 @@ const ChatInput = () => {
           </div>
         </form>
         {/* check down */}
-      </div>
-      <div className="replyCard">
-        <div className="card mb-0">
-          <div className="card-body py-3">
-            <div className="replymessage-block mb-0 d-flex align-items-start">
-              <div className="flex-grow-1">
-                <h5 className="conversation-name"></h5>
-                <p className="mb-0"></p>
-              </div>
-              <div className="flex-shrink-0">
-                <button
-                  type="button"
-                  id="close_toggle"
-                  className="btn btn-sm btn-link mt-n2 me-n3 fs-18"
-                >
-                  <i className="bx bx-x align-middle"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
