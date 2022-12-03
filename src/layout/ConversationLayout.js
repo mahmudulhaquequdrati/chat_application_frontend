@@ -26,7 +26,7 @@ const ConversationLayout = () => {
         />
 
         <div
-          className={`  ps-3 ps-lg-1 border  ${
+          className={`  ps-3 ps-lg-1   ${
             activeMenu
               ? "conversation_menu_wrapper_active"
               : "conversation_menu_wrapper"
