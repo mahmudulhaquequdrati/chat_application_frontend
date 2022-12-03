@@ -8,10 +8,10 @@ import TopBar from "../components/common/TopBar";
 
 const Layout = () => {
   return (
-    <React.Fragment>
+    <div className="main_layout">
       <TopBar />
       <Outlet />
-    </React.Fragment>
+    </div>
   );
 };
 
