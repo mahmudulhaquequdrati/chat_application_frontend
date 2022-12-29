@@ -1264,11 +1264,6 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   padding: 0 2px;
 }
 
-.main_layout {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
 .chat-leftsidebar {
   height: calc(100vh - 60px);
   position: relative;

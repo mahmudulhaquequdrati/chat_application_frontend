@@ -9,7 +9,7 @@ import ConversationLayout from "../layout/ConversationLayout";
 import GroupInbox from "../layout/common/GroupInbox";
 import CommingSoon from "../pages/CommingSoon";
 
-const AllRoutes = () => {
+const Index = () => {
   return (
     <React.Fragment>
       <Routes>
@@ -36,4 +36,4 @@ const AllRoutes = () => {
   );
 };
 
-export default AllRoutes;
+export default Index;

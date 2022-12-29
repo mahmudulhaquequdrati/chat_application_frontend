@@ -1,11 +1,11 @@
 import React from "react";
 import "../src/assets/scss/app.scss";
-import AllRoutes from "./Routes/Routes";
+import Route from "./Routes/index";
 
 function App() {
   return (
     <React.Fragment>
-      <AllRoutes />
+      <Route />
     </React.Fragment>
   );
 }
