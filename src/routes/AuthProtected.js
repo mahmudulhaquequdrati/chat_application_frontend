@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { useProfile } from "../components/hooks/UserHooks";
+import { useProfile } from "../components/hooks/userHooks";
 
 const AuthProtected = ({ children }) => {
   const location = useLocation();
