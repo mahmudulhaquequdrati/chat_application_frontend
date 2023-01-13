@@ -38,12 +38,14 @@ const ConversationLayout = () => {
               <div className="">
                 <button className="btn compose-btn d-flex align-items-center">
                   <BiMessageAltEdit size={20} />
-                  <p className="ms-1 compose mb-0 d-none d-md-block">Compose</p>
+                  <p className="ms-1 compose mb-0 d-none d-md-block">
+                    New Message
+                  </p>
                 </button>
               </div>
-              <div className="bg-dark-primary text-white d-flex align-items-center ps-2 pe-3 cheveromDown">
+              {/* <div className="bg-dark-primary text-white d-flex align-items-center ps-2 pe-3 cheveromDown">
                 <BsChevronDown size={12} className="cursor" />
-              </div>
+              </div> */}
             </div>
             <FeatherIcon
               icon={"x"}

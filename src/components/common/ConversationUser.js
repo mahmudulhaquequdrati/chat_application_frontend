@@ -22,12 +22,12 @@ const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
             </div>
             {/* other icons */}
             <div className="d-flex align-items-center gap-3">
-              <BiDotsVerticalRounded className=" fs-5" />
+              {/* <BiDotsVerticalRounded className=" fs-5" /> */}
               <FeatherIcon icon="tag" className="tag_icon" size={16} />
-              <AiOutlineUserAdd className="user_add fs-5" />
-              <button className="border-0 bg-white  btn-sm fs-8 py-1 px-2 rounded-4">
+              {/* <AiOutlineUserAdd className="user_add fs-5" /> */}
+              {/* <button className="border-0 bg-white  btn-sm fs-8 py-1 px-2 rounded-4">
                 Assaign
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="d-flex align-items-center gap-2 px-4 pb-2 mt-1">
@@ -35,7 +35,7 @@ const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
             <div className="d-flex align-items-center gap-1 ">
               <div className=" text-danger px-1 ms-1 tags_chat_user  rounded m-0 border border-danger d-flex align-items-center gap-1">
                 <p className="m-0 ">DANIEL</p>
-                <FeatherIcon icon="lock" size={10} className="mb-1" />
+                {/* <FeatherIcon icon="lock" size={10} className="mb-1" /> */}
               </div>
 
               <div className=" text-danger px-1 ms-1 tags_chat_user  rounded m-0 border border-danger d-flex align-items-center gap-1">
@@ -87,7 +87,7 @@ const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
             <ul className="list-inline user-chat-nav text-end mb-0 fs-6">
               <li className="list-inline-item">
                 <div className="dropdown">
-                  <button
+                  {/* <button
                     className="btn nav-btn dropdown-toggle"
                     type="button"
                     data-bs-toggle="dropdown"
@@ -95,8 +95,8 @@ const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
                     aria-expanded="false"
                   >
                     <i className="bx bx-search"></i>
-                  </button>
-                  <div className="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg">
+                  </button> */}
+                  {/* <div className="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg">
                     <div className="search-box p-2">
                       <input
                         type="text"
@@ -105,11 +105,11 @@ const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
                         id="searchChatMessage"
                       />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </li>
 
-              <li className="list-inline-item d-none d-lg-inline-block me-2 ms-0">
+              {/* <li className="list-inline-item d-none d-lg-inline-block me-2 ms-0">
                 <button
                   type="button"
                   className="btn nav-btn"
@@ -118,9 +118,9 @@ const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
                 >
                   <i className="bx bxs-phone-call"></i>
                 </button>
-              </li>
+              </li> */}
 
-              <li className="list-inline-item d-none d-lg-inline-block me-2 ms-0">
+              {/* <li className="list-inline-item d-none d-lg-inline-block me-2 ms-0">
                 <button
                   type="button"
                   className="btn nav-btn"
@@ -129,9 +129,9 @@ const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
                 >
                   <i className="bx bx-video"></i>
                 </button>
-              </li>
+              </li> */}
 
-              <li className="list-inline-item d-none d-lg-inline-block me-2 ms-0">
+              {/* <li className="list-inline-item d-none d-lg-inline-block me-2 ms-0">
                 <button
                   type="button"
                   className="btn nav-btn"
@@ -140,7 +140,7 @@ const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
                 >
                   <i className="bx bx-bookmark"></i>
                 </button>
-              </li>
+              </li> */}
 
               <li className="list-inline-item d-none d-lg-inline-block me-2 ms-0">
                 <button type="button" className="btn nav-btn user-profile-show">

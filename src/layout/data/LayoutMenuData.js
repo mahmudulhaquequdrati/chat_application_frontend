@@ -66,8 +66,8 @@ const NavData = () => {
       icon: <AiFillCaretUp size={12} />,
     },
     {
-      id: "inbox",
-      label: "Inbox",
+      id: "allInbox",
+      label: "All Inbox",
       icon: "inbox",
       link: "/#",
       click: function (e) {
@@ -76,71 +76,71 @@ const NavData = () => {
         // setIsCurrentState("inbox");
       },
       stateVariables: isInbox,
-      subItems: [
-        {
-          id: "assigned to me",
-          label: "Assigned to me",
-          icon: "user",
-          link: "/app/assigned-to-me",
-          parentId: "inbox",
-          number: 5,
-        },
-        {
-          id: "shared with me",
-          label: "Shared with me",
-          icon: "user",
-          link: "/app/shared-with-me",
-          parentId: "inbox",
-          number: 2,
-        },
-        {
-          id: "discussion",
-          label: "Discussion",
-          icon: "message-circle",
-          link: "/app/discussion",
-          parentId: "inbox",
-          number: 3,
-        },
-        {
-          id: "precisioncom",
-          label: "precisioncom...",
-          icon: "circle",
-          link: "/app/precisioncom",
-          parentId: "inbox",
-          number: 1,
-        },
-      ],
+      // subItems: [
+      //   {
+      //     id: "assigned to me",
+      //     label: "Assigned to me",
+      //     icon: "user",
+      //     link: "/app/assigned-to-me",
+      //     parentId: "inbox",
+      //     number: 5,
+      //   },
+      //   {
+      //     id: "shared with me",
+      //     label: "Shared with me",
+      //     icon: "user",
+      //     link: "/app/shared-with-me",
+      //     parentId: "inbox",
+      //     number: 2,
+      //   },
+      //   {
+      //     id: "discussion",
+      //     label: "Discussion",
+      //     icon: "message-circle",
+      //     link: "/app/discussion",
+      //     parentId: "inbox",
+      //     number: 3,
+      //   },
+      //   {
+      //     id: "precisioncom",
+      //     label: "precisioncom...",
+      //     icon: "circle",
+      //     link: "/app/precisioncom",
+      //     parentId: "inbox",
+      //     number: 1,
+      //   },
+      // ],
     },
-    {
-      id: "starred",
-      label: "Starred",
-      icon: "star",
-      link: "/app/starred",
-      click: function (e) {
-        e.preventDefault();
-        // setIsCurrentState("starred");
-      },
-    },
-    {
-      id: "drafts",
-      label: "Drafts",
-      icon: "file-text",
-      link: "/app/drafts",
-      click: function (e) {
-        e.preventDefault();
-        // setIsCurrentState("drafts");
-      },
-    },
-    {
-      id: "sent",
-      label: "Sent",
-      icon: "send",
-      link: "/app/sent",
-      click: function (e) {
-        e.preventDefault();
-        // setIsCurrentState("sent");
-      },
-    },
+    // {
+    //   id: "starred",
+    //   label: "Starred",
+    //   icon: "star",
+    //   link: "/app/starred",
+    //   click: function (e) {
+    //     e.preventDefault();
+    //     // setIsCurrentState("starred");
+    //   },
+    // },
+    // {
+    //   id: "drafts",
+    //   label: "Drafts",
+    //   icon: "file-text",
+    //   link: "/app/drafts",
+    //   click: function (e) {
+    //     e.preventDefault();
+    //     // setIsCurrentState("drafts");
+    //   },
+    // },
+    // {
+    //   id: "sent",
+    //   label: "Sent",
+    //   icon: "send",
+    //   link: "/app/sent",
+    //   click: function (e) {
+    //     e.preventDefault();
+    //     // setIsCurrentState("sent");
+    //   },
+    // },
     {
       id: "tags",
       label: "Tags",
@@ -234,15 +234,27 @@ const NavData = () => {
         },
       ],
     },
+    {
+      id: "mark",
+      label: "Mark",
+      icon: "tag",
+      link: "/app/mark",
+      click: function (e) {
+        e.preventDefault();
+        // setIsCurrentState("jhon");
+      },
+      number: 63,
+      color: "success",
+    },
 
     {
-      label: "Group Name",
+      label: "Company Name",
       isHeader: true,
       icon: <AiFillCaretUp size={12} />,
     },
     {
-      id: "team-inboxes",
-      label: "Team inboxes",
+      id: "developer-team",
+      label: "Developer Team",
       icon: "inbox",
       link: "/#",
       click: function (e) {
@@ -254,29 +266,29 @@ const NavData = () => {
       number: 250,
       subItems: [
         {
-          id: "aj-secure",
-          label: "AJ Secure",
+          id: "designing-channel",
+          label: "Designing Channel",
           icon: "circle",
           link: "/app/message",
-          parentId: "team-inboxes",
+          parentId: "developer-team",
           color: "primary",
           number: 50,
         },
         {
-          id: "demo-inboxes",
-          label: "Demo inboxes",
+          id: "testing-channel",
+          label: "Testing Channel",
           icon: "circle",
-          link: "/app/demo-inboxes",
-          parentId: "team-inboxes",
+          link: "/app/testing-channel",
+          parentId: "developer-team",
           color: "warning",
           number: 200,
         },
         {
-          id: "dispatch-sms",
-          label: "Dispatch SMS",
+          id: "marketing-channel",
+          label: "Marketing Channel",
           icon: "circle",
-          link: "/app/dispatch-sms",
-          parentId: "team-inboxes",
+          link: "/app/marketing-channel",
+          parentId: "developer-team",
           color: "success",
         },
       ],

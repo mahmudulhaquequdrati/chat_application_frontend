@@ -27,14 +27,14 @@ const messageTab = [
     name: "All Messages",
     active: true,
   },
-  {
-    id: 2,
-    name: "Unassigned",
-  },
-  {
-    id: 3,
-    name: "Assigned",
-  },
+  // {
+  //   id: 2,
+  //   name: "Unassigned",
+  // },
+  // {
+  //   id: 3,
+  //   name: "Assigned",
+  // },
 ];
 const GroupInbox = () => {
   const [inboxActive, setInboxActive] = useState(1);
