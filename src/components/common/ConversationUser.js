@@ -4,8 +4,8 @@ import React from "react";
 import img1 from "../../assets/images/users/avatar-2.jpg";
 import { GoPrimitiveDot } from "react-icons/go";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
-import { BiDotsVerticalRounded } from "react-icons/bi";
-import { AiOutlineUserAdd } from "react-icons/ai";
+// import { BiDotsVerticalRounded } from "react-icons/bi";
+// import { AiOutlineUserAdd } from "react-icons/ai";
 const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
   return (
     <div id="users-chat" className="position-relative ">
