@@ -142,10 +142,10 @@ const NavData = () => {
     //   },
     // },
     {
-      id: "tags",
-      label: "Tags",
+      id: "test",
+      label: "Test",
       icon: "tag",
-      link: "/app/tags",
+      link: "/app/tags/test",
       click: function (e) {
         e.preventDefault();
         // setIsCurrentState("tags");
@@ -153,10 +153,10 @@ const NavData = () => {
       color: "primary",
     },
     {
-      id: "test2",
-      label: "Test2",
+      id: "deniel",
+      label: "deniel",
       icon: "tag",
-      link: "/app/test2",
+      link: "/app/tags/deniel",
       click: function (e) {
         e.preventDefault();
         // setIsCurrentState("test2");
@@ -165,10 +165,10 @@ const NavData = () => {
       color: "warning",
     },
     {
-      id: "jhon",
-      label: "Jhon",
+      id: "design",
+      label: "Design",
       icon: "tag",
-      link: "/app/jhon",
+      link: "/app/tags/design",
       click: function (e) {
         e.preventDefault();
         // setIsCurrentState("jhon");
@@ -177,10 +177,10 @@ const NavData = () => {
       color: "success",
     },
     {
-      id: "arron",
-      label: "Arron",
+      id: "michel",
+      label: "Michel",
       icon: "tag",
-      link: "/app/arron",
+      link: "/app/tags/michel",
       click: function (e) {
         e.preventDefault();
         // setIsCurrentState("arron");
@@ -192,7 +192,7 @@ const NavData = () => {
       id: "development",
       label: "Development",
       icon: "tag",
-      link: "/app/development",
+      link: "/app/tags/development",
       click: function (e) {
         e.preventDefault();
         // setIsCurrentState("development");
@@ -218,7 +218,7 @@ const NavData = () => {
           id: "hcpod1",
           label: "HCPOD1",
           icon: "tag",
-          link: "/app/hcpod1",
+          link: "/app/tags/hcpod1",
           parentId: "hcpod",
           number: 75,
           color: "warning",
@@ -227,7 +227,7 @@ const NavData = () => {
           id: "hcpod2",
           label: "HCPOD2",
           icon: "tag",
-          link: "/app/hcpod2",
+          link: "/app/tags/hcpod2",
           parentId: "hcpod",
           number: 50,
           color: "success",
@@ -238,7 +238,7 @@ const NavData = () => {
       id: "mark",
       label: "Mark",
       icon: "tag",
-      link: "/app/mark",
+      link: "/app/tags/mark",
       click: function (e) {
         e.preventDefault();
         // setIsCurrentState("jhon");

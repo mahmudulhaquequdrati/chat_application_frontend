@@ -1,42 +1,16 @@
 import React, { useEffect, useState } from "react";
 import ChatInput from "../../components/common/ChatInput";
 import ConversationUser from "../../components/common/ConversationUser";
+import { useParams } from "react-router-dom";
 
-// const inboxData = [
-//   {
-//     id: 1,
-//     name: "James Colin",
-//     time: "11D",
-//     message: "Hi, we have worked hard to build a career in this...",
-//     tags: ["daniel", "test", "design"],
-//     type: "SMS Message",
-//     active: true,
-//   },
-//   {
-//     id: 2,
-//     name: "Jhon Doe",
-//     time: "5D",
-//     message: "welcome to the world of react",
-//     tags: [],
-//     type: "SMS Message",
-//   },
-// ];
 const messageTab = [
   {
     id: 1,
     name: "All Messages",
     active: true,
   },
-  // {
-  //   id: 2,
-  //   name: "Unassigned",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Assigned",
-  // },
 ];
-const GroupInbox = () => {
+const TagInbox = () => {
   const [inboxActive, setInboxActive] = useState(1);
   const [messageTabActive, setMessageTabActive] = useState(1);
   const [inboxDataActive, setInboxDataActive] = useState(false);
@@ -44,6 +18,8 @@ const GroupInbox = () => {
   const [messageData, setMessageData] = useState([]);
   const [conversationUserName, setConversationUserName] = useState("");
   const [conversationTags, setConversationTags] = useState([]);
+
+  const { tagName } = useParams();
 
   const handleInboxActive = (id) => {
     setInboxActive(id);
@@ -53,14 +29,14 @@ const GroupInbox = () => {
   useEffect(() => {
     const response = () =>
       fetch(
-        "https://chat-app-backend-9pfz.onrender.com/api/v1/conversations/all-conversations"
+        `https://chat-app-backend-9pfz.onrender.com/api/v1/conversations/all-conversations/${tagName}`
       )
         .then((res) => res.json())
         .then((data) => {
-          setConversationData(data?.data?.conversations);
+          setConversationData(data?.conversation);
         });
     response();
-  }, []);
+  }, [tagName]);
 
   const handleGetMessages = async (id) => {
     const response = await fetch(
@@ -107,51 +83,62 @@ const GroupInbox = () => {
           </div>
         </div>
         {/* message inbox */}
-        <div className="d-flex flex-column gap-1 px-2 py-1">
-          {conversationData?.map((item) => (
-            <div
-              className={` ${
-                inboxActive === item?._id
-                  ? "chat_background_active border"
-                  : "chat_background"
-              }    position-relative `}
-              key={item._id}
-              onClick={() => {
-                handleInboxActive(item?._id);
-                handleGetMessages(item?._id);
-                setConversationUserName(item?.username);
-                setConversationTags(item?.tags);
-              }}
-            >
-              <div className="">
-                <div className="d-flex justify-content-between">
-                  <p className="fw-medium m-0">{item?.username}</p>
-                  <div className="">{item?.time ? item?.time : "7D"}</div>
-                </div>
-                <div className="d-flex justify-content-between align-items-center gap-3 position-relative">
-                  <p className="fw-medium sms mb-0">{item?.smsType}</p>
-                  <div className=" tags_container fs-7">
-                    {/* tags */}
-                    {item?.tags.map((tag, index) => (
-                      <p
-                        className={`bg-white text-danger border border-danger  ${
-                          inboxActive === item.id && "border-white "
-                        } inbox_tag float-end ms-1 rounded`}
-                        key={index}
-                      >
-                        {tag}
-                      </p>
-                    ))}
+        {conversationData.length ? (
+          <div className="d-flex flex-column gap-1 px-2 py-1">
+            {conversationData?.map((item) => (
+              <div
+                className={` ${
+                  inboxActive === item?._id
+                    ? "chat_background_active border"
+                    : "chat_background"
+                }    position-relative `}
+                key={item._id}
+                onClick={() => {
+                  handleInboxActive(item?._id);
+                  handleGetMessages(item?._id);
+                  setConversationUserName(item?.username);
+                  setConversationTags(item?.tags);
+                }}
+              >
+                <div className="">
+                  <div className="d-flex justify-content-between">
+                    <p className="fw-medium m-0">{item?.username}</p>
+                    <div className="">{item?.time ? item?.time : "7D"}</div>
                   </div>
-                </div>
+                  <div className="d-flex justify-content-between align-items-center gap-3 position-relative">
+                    <p className="fw-medium sms mb-0">{item?.smsType}</p>
+                    <div className=" tags_container fs-7">
+                      {/* tags */}
+                      {item?.tags.map((tag, index) => (
+                        <p
+                          className={`bg-white text-danger border border-danger  ${
+                            inboxActive === item.id && "border-white "
+                          } inbox_tag float-end ms-1 rounded`}
+                          key={index}
+                        >
+                          {tag}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
 
-                <p className=" m-0 fs-7">{item?.lastmessage}</p>
+                  <p className=" m-0 fs-7">{item?.lastmessage}</p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div
+            className="d-flex justify-content-center align-items-center flex-column w-100  "
+            style={{ height: "calc(100vh - 124px)" }}
+          >
+            <p className="fs-5 text-gray-light">
+              No conversation found for this tag.
+            </p>
+          </div>
+        )}
       </div>
-      {messageData?.length ? (
+      {messageData?.length && conversationData.length ? (
         <div
           className={` d-flex flex-column chat_user_conversation ${
             inboxDataActive ? "chat_user_conversation_active " : ""
@@ -177,4 +164,4 @@ const GroupInbox = () => {
   );
 };
 
-export default GroupInbox;
+export default TagInbox;

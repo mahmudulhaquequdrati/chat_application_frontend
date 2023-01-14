@@ -6,7 +6,13 @@ import { GoPrimitiveDot } from "react-icons/go";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 // import { BiDotsVerticalRounded } from "react-icons/bi";
 // import { AiOutlineUserAdd } from "react-icons/ai";
-const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
+const ConversationUser = ({
+  inboxDataActive,
+  setInboxDataActive,
+  messageData,
+  conversationUserName,
+  conversationTags,
+}) => {
   return (
     <div id="users-chat" className="position-relative ">
       <div className="chat-topbar-bg">
@@ -33,15 +39,14 @@ const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
           <div className="d-flex align-items-center gap-2 px-4 pb-2 mt-1">
             <p className="mb-0 fw-semibold fs-5">SMS Message</p>
             <div className="d-flex align-items-center gap-1 ">
-              <div className=" text-danger px-1 ms-1 tags_chat_user  rounded m-0 border border-danger d-flex align-items-center gap-1">
-                <p className="m-0 ">DANIEL</p>
-                {/* <FeatherIcon icon="lock" size={10} className="mb-1" /> */}
-              </div>
-
-              <div className=" text-danger px-1 ms-1 tags_chat_user  rounded m-0 border border-danger d-flex align-items-center gap-1">
-                <p className="m-0 ">Test</p>
-                <FeatherIcon icon="lock" size={10} className="d-none" />
-              </div>
+              {conversationTags?.map((tag, index) => (
+                <div
+                  className=" text-danger px-1 ms-1 tags_chat_user  rounded m-0 border border-danger d-flex align-items-center gap-1"
+                  key={index}
+                >
+                  <p className="m-0 ">{tag}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -72,7 +77,7 @@ const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
                   <div className="flex-grow-1 overflow-hidden">
                     <h6 className="text-truncate mb-0 fs-18">
                       <a href="#" className="user-profile-show text-reset">
-                        Victoria Lane
+                        {conversationUserName}
                       </a>
                     </h6>
                     <p className="text-truncate text-muted mb-0">
@@ -222,6 +227,106 @@ const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
         ></ul> */}
 
         {/* <!-- */}
+        {messageData?.map((item, index) => {
+          return (
+            <div
+              className={`chat-list ${
+                item?.name === conversationUserName
+                  ? "right d-flex justify-content-end"
+                  : "left"
+              } mb-2`}
+              id="10"
+              key={index}
+            >
+              <div className="conversation-list mb-2">
+                {item?.name !== conversationUserName && (
+                  <div className="chat-avatar">
+                    <img src={img1} alt="" />
+                  </div>
+                )}
+                <div className="user-chat-content ">
+                  <div className="ctext-wrap mb-2">
+                    <div className="message-img mb-0">
+                      <div
+                        className={`message-img-list ${
+                          item?.name === conversationUserName
+                            ? "conversation-right"
+                            : "conversation-left"
+                        } py-2 px-3 rounded-3`}
+                      >
+                        <p className="chat-msg-item mb-0">{item?.message}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="d-flex justify-content-between gap-3">
+                    {item?.name === conversationUserName && (
+                      <div className=" text-danger px-1 ms-1 tags_chat_user  rounded m-0 border border-danger d-flex align-items-center gap-1 tags_chat_user">
+                        {item?.name === conversationUserName && (
+                          <p className={`m-0`}>DANIEL</p>
+                        )}
+                        {item?.name === conversationUserName && (
+                          <FeatherIcon icon="lock" size={10} className="mb-1" />
+                        )}
+                      </div>
+                    )}
+                    <div className="conversation-name">
+                      <small className="text-muted time">01:45 am</small>
+                      <span className="text-success check-message-icon">
+                        <i className="bx bx-check-double"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+        {/* <div className="chat-list right d-flex justify-content-end" id="10">
+          <div className="conversation-list mb-2">
+            <div className="user-chat-content ">
+              <div className="ctext-wrap mb-2">
+                <div className="message-img mb-0">
+                  <div className="message-img-list conversation-right py-2 px-3 rounded-3">
+                    <p className="chat-msg-item mb-0">Wow that's great!</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="d-flex justify-content-between gap-3">
+                <div className=" text-danger px-1 ms-1 tags_chat_user  rounded m-0 border border-danger d-flex align-items-center gap-1 tags_chat_user">
+                  <p className="m-0 ">DANIEL</p>
+                  <FeatherIcon icon="lock" size={10} className="mb-1" />
+                </div>
+                <div className="conversation-name">
+                  <small className="text-muted time">01:45 am</small>
+                  <span className="text-success check-message-icon">
+                    <i className="bx bx-check-double"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="chat-list left mb-3" id="10">
+          <div className="conversation-list mb-0">
+            <div className="chat-avatar">
+              <img src={img1} alt="" />
+            </div>
+            <div className="user-chat-content">
+              <div className="ctext-wrap">
+                <div className="message-img-list conversation-left py-2 px-3 rounded-3">
+                  <p className="chat-msg-item mb-0">
+                    Hey welcome to react world!
+                  </p>
+                </div>
+              </div>
+              <div className="conversation-name">
+                <small className="text-muted time">11:55 am</small>
+              </div>
+            </div>
+          </div>
+        </div> */}
         <div className="chat-list left" id="10">
           <div className="conversation-list mb-0">
             <div className="chat-avatar">
@@ -236,7 +341,7 @@ const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
                   <div className="message-img-list">
                     <audio controls>
                       <source
-                        src="http://w3codegenerator.com/audio/audio.mp3"
+                        src="https://w3codegenerator.com/audio/audio.mp3"
                         type="audio/mpeg"
                       />
                     </audio>
@@ -322,35 +427,6 @@ const ConversationUser = ({ inboxDataActive, setInboxDataActive }) => {
                 <span className="text-success check-message-icon">
                   <i className="bx bx-check-double"></i>
                 </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="chat-list right d-flex justify-content-end" id="10">
-          <div className="conversation-list mb-2">
-            {/* <div className="chat-avatar">
-              <img src={img1} alt="" />
-            </div> */}
-            <div className="user-chat-content ">
-              <div className="ctext-wrap mb-2">
-                <div className="message-img mb-0">
-                  <div className="message-img-list conversation py-2 px-3 rounded-3">
-                    <p className="chat-msg-item mb-0">Wow that's great!</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="d-flex justify-content-between gap-3">
-                <div className=" text-danger px-1 ms-1 tags_chat_user  rounded m-0 border border-danger d-flex align-items-center gap-1 tags_chat_user">
-                  <p className="m-0 ">DANIEL</p>
-                  <FeatherIcon icon="lock" size={10} className="mb-1" />
-                </div>
-                <div className="conversation-name">
-                  <small className="text-muted time">01:45 am</small>
-                  <span className="text-success check-message-icon">
-                    <i className="bx bx-check-double"></i>
-                  </span>
-                </div>
               </div>
             </div>
           </div>

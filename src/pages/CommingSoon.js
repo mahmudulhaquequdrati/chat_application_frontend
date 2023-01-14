@@ -12,8 +12,8 @@ const CommingSoon = () => {
         <p>This page is on the way. Be patient please!</p>
         <div className="icons">
           <i className="bx bxl-facebook-circle bx-md"></i>
-          <i class="bx bxl-youtube bx-md"></i>
-          <i class="bx bxl-telegram bx-md"></i>
+          <i className="bx bxl-youtube bx-md"></i>
+          <i className="bx bxl-telegram bx-md"></i>
         </div>
         <div className=" text-center w-100 mt-4">
           <Link className="text-dark-primary" to="/">

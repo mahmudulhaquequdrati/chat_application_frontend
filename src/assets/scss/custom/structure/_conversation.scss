@@ -85,3 +85,11 @@
     cursor: pointer;
   }
 }
+
+.conversation-right {
+  background-color: $conversation-bg !important;
+  color: $white;
+}
+.conversation-left {
+  background-color: #f6f6f9;
+}

@@ -1087,11 +1087,6 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
   padding-top: 2px;
 }
 
-.conversation {
-  background-color: rgba(var(--bs-primary-rgb), 0.83) !important;
-  color: #fff;
-}
-
 .conversation_grid {
   display: grid;
   grid-template-columns: 20% 80%;
@@ -1185,6 +1180,15 @@ body[data-layout-mode=dark] a.fg-emoji-picker-close-button {
 }
 .grid-container .cursor {
   cursor: pointer;
+}
+
+.conversation-right {
+  background-color: rgba(var(--bs-primary-rgb), 0.83) !important;
+  color: #fff;
+}
+
+.conversation-left {
+  background-color: #f6f6f9;
 }
 
 .groupInbox-container .chat_background {
