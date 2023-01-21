@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://chat-app-backend-9pfz.onrender.com/api/v1";
+const API_URL = process.env.REACT_APP_API_URL;
 
 // intercepting to capture errors
 axios.interceptors.response.use(
