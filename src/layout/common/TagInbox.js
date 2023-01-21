@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import ChatInput from "../../components/common/ChatInput";
 import ConversationUser from "../../components/common/ConversationUser";
 import { useParams } from "react-router-dom";
+import {
+  getConversationByTag,
+  getMessagesById,
+} from "../../helpers/api_services/api_services";
 
 const messageTab = [
   {
@@ -27,23 +31,29 @@ const TagInbox = () => {
   };
 
   useEffect(() => {
-    const response = () =>
-      fetch(
-        `https://chat-app-backend-9pfz.onrender.com/api/v1/conversations/all-conversations/${tagName}`
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          setConversationData(data?.conversation);
-        });
-    response();
+    getConversationByTag(tagName).then((res) => {
+      setConversationData(res?.conversation);
+    });
+    // const response = () =>
+    //   fetch(
+    //     `https://chat-app-backend-9pfz.onrender.com/api/v1/conversations/all-conversations/${tagName}`
+    //   )
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       setConversationData(data?.conversation);
+    //     });
+    // response();
   }, [tagName]);
 
   const handleGetMessages = async (id) => {
-    const response = await fetch(
-      `https://chat-app-backend-9pfz.onrender.com/api/v1/messages/all-messages/${id}`
-    );
-    const data = await response.json();
-    setMessageData(data?.message?.messages);
+    getMessagesById(id).then((res) => {
+      setMessageData(res?.message?.messages);
+    });
+    // const response = await fetch(
+    //   `https://chat-app-backend-9pfz.onrender.com/api/v1/messages/all-messages/${id}`
+    // );
+    // const data = await response.json();
+    // setMessageData(data?.message?.messages);
   };
 
   return (
@@ -58,7 +68,7 @@ const TagInbox = () => {
         {/* message Tab */}
         <div className="d-flex align-items-center justify-content-start  py-2">
           <div className="d-flex align-items-center border-bottom border-start w-100 gap-3 pb-2 pt-1 ps-3 cursor">
-            {messageTab.map((item) => (
+            {messageTab?.map((item) => (
               <div
                 className={`fs-8 ${
                   messageTabActive === item?.id && "fw-semibold"
@@ -83,7 +93,7 @@ const TagInbox = () => {
           </div>
         </div>
         {/* message inbox */}
-        {conversationData.length ? (
+        {conversationData?.length ? (
           <div className="d-flex flex-column gap-1 px-2 py-1">
             {conversationData?.map((item) => (
               <div
@@ -138,7 +148,7 @@ const TagInbox = () => {
           </div>
         )}
       </div>
-      {messageData?.length && conversationData.length ? (
+      {messageData?.length && conversationData?.length ? (
         <div
           className={` d-flex flex-column chat_user_conversation ${
             inboxDataActive ? "chat_user_conversation_active " : ""

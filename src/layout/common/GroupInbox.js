@@ -1,40 +1,18 @@
 import React, { useEffect, useState } from "react";
 import ChatInput from "../../components/common/ChatInput";
 import ConversationUser from "../../components/common/ConversationUser";
+import {
+  getAllConversations,
+  getMessagesById,
+} from "../../helpers/api_services/api_services";
+// import { getAllConversations } from "../../helpers/api_services/api_services";
 
-// const inboxData = [
-//   {
-//     id: 1,
-//     name: "James Colin",
-//     time: "11D",
-//     message: "Hi, we have worked hard to build a career in this...",
-//     tags: ["daniel", "test", "design"],
-//     type: "SMS Message",
-//     active: true,
-//   },
-//   {
-//     id: 2,
-//     name: "Jhon Doe",
-//     time: "5D",
-//     message: "welcome to the world of react",
-//     tags: [],
-//     type: "SMS Message",
-//   },
-// ];
 const messageTab = [
   {
     id: 1,
     name: "All Messages",
     active: true,
   },
-  // {
-  //   id: 2,
-  //   name: "Unassigned",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Assigned",
-  // },
 ];
 const GroupInbox = () => {
   const [inboxActive, setInboxActive] = useState(1);
@@ -50,24 +28,33 @@ const GroupInbox = () => {
     setInboxDataActive(!inboxDataActive);
   };
 
+  // useEffect(() => {
+  //   const response = () =>
+  //     fetch(
+  //       "https://chat-app-backend-9pfz.onrender.com/api/v1/conversations/all-conversations"
+  //     )
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setConversationData(data?.data?.conversations);
+  //       });
+  //   response();
+  // }, []);
+
   useEffect(() => {
-    const response = () =>
-      fetch(
-        "https://chat-app-backend-9pfz.onrender.com/api/v1/conversations/all-conversations"
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          setConversationData(data?.data?.conversations);
-        });
-    response();
+    getAllConversations().then((res) => {
+      setConversationData(res?.data?.conversations);
+    });
   }, []);
 
   const handleGetMessages = async (id) => {
-    const response = await fetch(
-      `https://chat-app-backend-9pfz.onrender.com/api/v1/messages/all-messages/${id}`
-    );
-    const data = await response.json();
-    setMessageData(data?.message?.messages);
+    getMessagesById(id).then((res) => {
+      setMessageData(res?.message?.messages);
+    });
+    // const response = await fetch(
+    //   `https://chat-app-backend-9pfz.onrender.com/api/v1/messages/all-messages/${id}`
+    // );
+    // const data = await response.json();
+    // setMessageData(data?.message?.messages);
   };
 
   return (
@@ -76,7 +63,6 @@ const GroupInbox = () => {
         className=""
         style={{
           maxHeight: `calc(100vh - 26px)`,
-          // overflowY: "auto",
         }}
       >
         {/* message Tab */}
