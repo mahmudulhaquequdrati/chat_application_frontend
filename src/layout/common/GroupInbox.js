@@ -5,7 +5,6 @@ import {
   getAllConversations,
   getMessagesById,
 } from "../../helpers/api_services/api_services";
-// import { getAllConversations } from "../../helpers/api_services/api_services";
 
 const messageTab = [
   {

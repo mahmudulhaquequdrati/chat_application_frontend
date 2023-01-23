@@ -36,7 +36,7 @@ const ConversationLayout = () => {
           <div className="d-flex  justify-content-between ">
             <div className=" px-0 mb-2 d-flex align-items-center">
               <div className="">
-                <button className="btn compose-btn d-flex align-items-center">
+                <button className="btn btn-primary rounded-pill py-1 d-flex align-items-center">
                   <BiMessageAltEdit size={20} />
                   <p className="ms-1 compose mb-0 d-none d-md-block">
                     New Message
