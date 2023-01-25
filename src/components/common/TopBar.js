@@ -8,12 +8,13 @@ import { IoIosHelpCircleOutline } from "react-icons/io";
 import { IoSettingsOutline, IoFilter } from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
 import { BiSearch } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const TopBar = () => {
   return (
     <div className="topbar px-1 px-sm-2 px-md-3 ">
       <div className="d-flex gap-2 align-items-center h-100 topbar_icons ">
-        <FiInbox className=" icons" />
+        <Link to="app/all-inbox" className="bg-soft-white rounded"><FiInbox className=" icons" /></Link>
         {/* <BsFillCalendar2DateFill className=" calendar-icon" /> */}
         <MdPermContactCalendar className="icons" />
         {/* <IoMdStats className="icons " /> */}

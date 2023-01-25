@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <React.Fragment>
       <Routes>
-        <Route path="/" element={<Navigate to="/app/message" />} />
+        <Route path="/" element={<Navigate to="/app/all-inbox" />} />
         <Route
           element={
             <AuthProtected>
@@ -23,13 +23,13 @@ const Index = () => {
           }
         >
           <Route path="app" element={<ConversationLayout />}>
-            <Route index="true" element={<Navigate to="message" />} />
-            <Route path="message" element={<GroupInbox />} />
+            <Route index="true" element={<Navigate to="all-inbox" />} />
+            <Route path="all-inbox" element={<GroupInbox />} />
             <Route path="tags/:tagName" element={<TagInbox />} />
+            <Route path="channel/:channelName" element={<GroupInbox />} />
             <Route path="*" element={<CommingSoon />} />
           </Route>
         </Route>
-
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />

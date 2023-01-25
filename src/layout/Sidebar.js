@@ -1,6 +1,6 @@
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import React, { useEffect, useState } from "react";
-import { BsChevronDown } from "react-icons/bs";
+import { BsChevronDown , BsChevronRight} from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 import NavData from "./data/LayoutMenuData";
 import { Link } from "react-router-dom";
@@ -70,7 +70,10 @@ const Sidebar = () => {
                     className="d-flex align-items-center justify-content-between w-100 gap-1  menu_item ps-1 text-gray_light pe-2"
                   >
                     <div className="d-flex align-items-center gap-1">
-                      <BsChevronDown size={14} />
+                    {
+                      parentCollapse.find((x) => x.id === item?.id)?.state ?<BsChevronDown  size={14} /> : <BsChevronRight size={14} />
+                    }
+                      
                       <FeatherIcon
                         icon={item.icon}
                         className={`align-self-center icons ${
