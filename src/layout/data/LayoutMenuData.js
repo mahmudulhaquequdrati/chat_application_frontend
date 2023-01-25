@@ -12,7 +12,7 @@ const NavData = () => {
       id: "allInbox",
       label: "All Inbox",
       icon: "inbox",
-      link: "/#", // "/app/all-inbox",
+      link: "/app/all-inbox", 
       // state: false,
       // subItems: [
       //   {
@@ -169,27 +169,30 @@ const NavData = () => {
       subItems: [
         {
           id: "designing-channel",
+          channelId : "5f9f1b5b5b9b9b5b5b5b5b5b",
           label: "Designing Channel",
           icon: "circle",
-          link: "/app/message",
+          link: "/app/channel/designing-channel",
           parentId: "developer-team",
           color: "primary",
           number: 50,
         },
         {
           id: "testing-channel",
+          channelId : "5f9f1b5b5b9b9b5b5b5b5b5d",
           label: "Testing Channel",
           icon: "circle",
-          link: "/app/testing-channel",
+          link: "/app/channel/testing-channel",
           parentId: "developer-team",
           color: "warning",
           number: 200,
         },
         {
           id: "marketing-channel",
+          channelId : "5f9f1b5b5b9b9b5b5b5b5b5c",
           label: "Marketing Channel",
           icon: "circle",
-          link: "/app/marketing-channel",
+          link: "/app/channel/marketing-channel",
           parentId: "developer-team",
           color: "success",
         },
