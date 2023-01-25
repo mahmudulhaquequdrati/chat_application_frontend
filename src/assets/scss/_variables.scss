@@ -94,7 +94,7 @@ $grays: (
 
 // scss-docs-start color-variables
 $blue: #24aaec; //#24aaec // #4eac6d
-$indigo: #001b38;
+$indigo: #6610f2; //#6610f2
 $purple: #6153cc;
 $pink: #b966c1;
 $red: #e9483a;
@@ -104,6 +104,7 @@ $green: #06d6a0;
 $teal: #050505;
 $cyan: #50a5f1;
 $darkBlue: #1a46ab;
+$black: #001b38;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -127,7 +128,7 @@ $colors: (
 // scss-docs-start theme-color-variables
 $primary: $blue;
 $dark-primary: $darkBlue;
-$secondary: $indigo;
+$secondary: $black;
 $success: $green;
 $info: $cyan;
 $warning: $yellow;

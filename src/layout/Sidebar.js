@@ -9,6 +9,24 @@ import { Collapse } from "reactstrap";
 const Sidebar = () => {
   const navData = NavData().props.children;
   const [active, setActive] = useState("");
+  const [parentCollapse, setParentCollapse] = useState(
+    navData.filter((item) => item?.subItems)
+  );
+
+  const handleClick = (id) => {
+    setParentCollapse((prevState) => {
+      return prevState.map((item) => {
+        if (item.id === id) {
+          return {
+            ...item,
+            state: !item.state,
+          };
+        } else {
+          return item;
+        }
+      });
+    });
+  };
 
   useEffect(() => {
     const currentUrl = window.location.pathname;
@@ -45,9 +63,10 @@ const Sidebar = () => {
                 </li>
               ) : item.subItems ? (
                 <li className="mt-1 pe-2">
-                  <Link
-                    onClick={item.click}
-                    to={item.link ? item.link : "/#"}
+                  <div
+                    // onClick={item.click}
+                    onClick={() => handleClick(item?.id)}
+                    // to={item.link ? item.link : "/#"}
                     className="d-flex align-items-center justify-content-between w-100 gap-1  menu_item ps-1 text-gray_light pe-2"
                   >
                     <div className="d-flex align-items-center gap-1">
@@ -68,10 +87,12 @@ const Sidebar = () => {
                         <span className="text-muted">{item?.number}</span>
                       </div>
                     ) : null}
-                  </Link>
+                  </div>
                   <Collapse
                     className="pb-0 menu-dropdown"
-                    isOpen={item?.stateVariables}
+                    isOpen={
+                      parentCollapse.find((x) => x.id === item?.id)?.state
+                    }
                   >
                     <ul className={`sub_menu  mb-1 mt-1 `}>
                       {(item.subItems || []).map((subItem, index) => (

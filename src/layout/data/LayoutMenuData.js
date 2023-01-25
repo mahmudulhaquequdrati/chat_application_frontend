@@ -1,64 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { AiFillCaretUp } from "react-icons/ai";
 
 const NavData = () => {
-  const [isInbox, setIsInbox] = useState(true);
-  const [isHCPOD, setIsHCPOD] = useState(true);
-  const [isTeamInboxes, setIsTeamInboxes] = useState(true);
-
-  // if we want like, if any expanded item is clicked then other expanded item should be closed then uncomment below code.
-
-  // const [isCurrentState, setIsCurrentState] = useState("team-inboxes");
-
-  // useEffect(() => {
-  //   if (isCurrentState !== "inbox") {
-  //     setIsInbox(false);
-  //   }
-  //   if (isCurrentState !== "starred") {
-  //     setIsStarred(false);
-  //   }
-  //   if (isCurrentState !== "drafts") {
-  //     setIsDrafts(false);
-  //   }
-  //   if (isCurrentState !== "sent") {
-  //     setIsSent(false);
-  //   }
-  //   if (isCurrentState !== "tags") {
-  //     setIsTags(false);
-  //   }
-  //   if (isCurrentState !== "test2") {
-  //     setIsTest2(false);
-  //   }
-  //   if (isCurrentState !== "jhon") {
-  //     setIsJhon(false);
-  //   }
-  //   if (isCurrentState !== "arron") {
-  //     setIsArron(false);
-  //   }
-  //   if (isCurrentState !== "development") {
-  //     setIsDevelopment(false);
-  //   }
-  //   if (isCurrentState !== "hcpod") {
-  //     setIsHCPOD(false);
-  //   }
-  //   if (isCurrentState !== "team-inboxes") {
-  //     setIsTeamInboxes(false);
-  //   }
-  // }, [
-  //   isCurrentState,
-  //   isInbox,
-  //   isStarred,
-  //   isDrafts,
-  //   isSent,
-  //   isTags,
-  //   isTest2,
-  //   isJhon,
-  //   isArron,
-  //   isDevelopment,
-  //   isHCPOD,
-  //   isTeamInboxes,
-  // ]);
-
   const menuItems = [
     {
       label: "Me",
@@ -69,13 +12,8 @@ const NavData = () => {
       id: "allInbox",
       label: "All Inbox",
       icon: "inbox",
-      link: "/#",
-      click: function (e) {
-        e.preventDefault();
-        setIsInbox(!isInbox);
-        // setIsCurrentState("inbox");
-      },
-      stateVariables: isInbox,
+      link: "/#", // "/app/all-inbox",
+      // state: false,
       // subItems: [
       //   {
       //     id: "assigned to me",
@@ -146,10 +84,6 @@ const NavData = () => {
       label: "Test",
       icon: "tag",
       link: "/app/tags/test",
-      click: function (e) {
-        e.preventDefault();
-        // setIsCurrentState("tags");
-      },
       color: "primary",
     },
     {
@@ -157,10 +91,6 @@ const NavData = () => {
       label: "deniel",
       icon: "tag",
       link: "/app/tags/deniel",
-      click: function (e) {
-        e.preventDefault();
-        // setIsCurrentState("test2");
-      },
       number: 2,
       color: "warning",
     },
@@ -169,10 +99,6 @@ const NavData = () => {
       label: "Design",
       icon: "tag",
       link: "/app/tags/design",
-      click: function (e) {
-        e.preventDefault();
-        // setIsCurrentState("jhon");
-      },
       number: 23,
       color: "success",
     },
@@ -181,10 +107,6 @@ const NavData = () => {
       label: "Michel",
       icon: "tag",
       link: "/app/tags/michel",
-      click: function (e) {
-        e.preventDefault();
-        // setIsCurrentState("arron");
-      },
       number: 43,
       color: "info",
     },
@@ -193,10 +115,6 @@ const NavData = () => {
       label: "Development",
       icon: "tag",
       link: "/app/tags/development",
-      click: function (e) {
-        e.preventDefault();
-        // setIsCurrentState("development");
-      },
       number: 55,
       color: "danger",
     },
@@ -204,15 +122,9 @@ const NavData = () => {
       id: "hcpod",
       label: "HCPOD",
       icon: "tag",
-      link: "/#",
-      click: function (e) {
-        e.preventDefault();
-        setIsHCPOD(!isHCPOD);
-        // setIsCurrentState("hcpod");
-      },
-      stateVariables: isHCPOD,
       number: 125,
       color: "primary",
+      state: true,
       subItems: [
         {
           id: "hcpod1",
@@ -239,10 +151,6 @@ const NavData = () => {
       label: "Mark",
       icon: "tag",
       link: "/app/tags/mark",
-      click: function (e) {
-        e.preventDefault();
-        // setIsCurrentState("jhon");
-      },
       number: 63,
       color: "success",
     },
@@ -256,14 +164,8 @@ const NavData = () => {
       id: "developer-team",
       label: "Developer Team",
       icon: "inbox",
-      link: "/#",
-      click: function (e) {
-        e.preventDefault();
-        setIsTeamInboxes(!isTeamInboxes);
-        // setIsCurrentState("team-inboxes");
-      },
-      stateVariables: isTeamInboxes,
       number: 250,
+      state: true,
       subItems: [
         {
           id: "designing-channel",
