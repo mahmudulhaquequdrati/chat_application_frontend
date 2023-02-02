@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ChatInput from "../../components/common/ChatInput";
 import ConversationUser from "../../components/common/ConversationUser";
 import {
@@ -27,6 +28,9 @@ const GroupInbox = () => {
     setInboxDataActive(!inboxDataActive);
   };
 
+  const {id} = useParams()
+  // console.log(id)
+
   // useEffect(() => {
   //   const response = () =>
   //     fetch(
@@ -38,12 +42,25 @@ const GroupInbox = () => {
   //       });
   //   response();
   // }, []);
-
   useEffect(() => {
-    getAllConversations().then((res) => {
-      setConversationData(res?.data?.conversations);
-    });
-  }, []);
+    if(id){
+    const response = () =>
+    fetch(
+      `http://localhost:5000/api/v1/conversations/all-conversations/channel/${id}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setConversationData(data?.conversation);
+      });
+  response();
+    }
+    else{
+      getAllConversations().then((res) => {
+        setConversationData(res?.data?.conversations);
+      });
+    }
+  }, [id]);
+
 
   const handleGetMessages = async (id) => {
     getMessagesById(id).then((res) => {

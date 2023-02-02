@@ -6,7 +6,6 @@ const NavData = () => {
     {
       label: "Me",
       isHeader: true,
-      icon: <AiFillCaretUp size={12} />,
     },
     {
       id: "allInbox",
@@ -158,7 +157,6 @@ const NavData = () => {
     {
       label: "Company Name",
       isHeader: true,
-      icon: <AiFillCaretUp size={12} />,
     },
     {
       id: "developer-team",

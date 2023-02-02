@@ -26,7 +26,7 @@ const Index = () => {
             <Route index="true" element={<Navigate to="all-inbox" />} />
             <Route path="all-inbox" element={<GroupInbox />} />
             <Route path="tags/:tagName" element={<TagInbox />} />
-            <Route path="channel/:channelName" element={<GroupInbox />} />
+            <Route path="channel/:id" element={<GroupInbox />} />
             <Route path="*" element={<CommingSoon />} />
           </Route>
         </Route>
