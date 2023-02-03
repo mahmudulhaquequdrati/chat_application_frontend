@@ -5,13 +5,25 @@ import { GoPrimitiveDot } from "react-icons/go";
 import NavData from "./data/LayoutMenuData";
 import { Link } from "react-router-dom";
 import { Collapse } from "reactstrap";
+import { AiFillCaretUp } from "react-icons/ai";
 
 const Sidebar = () => {
-  const navData = NavData().props.children;
+  // const navData = NavData().props.children;
+  const [navData , setNavData] = useState([]);
+  useEffect(()=>{
+    fetch("http://localhost:5000/api/v1/channels/all-channels").then(res =>res.json()).then(data =>setNavData(data?.channels)).catch(err => console.log(err))
+  },[])
+  // console.log(navData)
+
   const [active, setActive] = useState("");
-  const [parentCollapse, setParentCollapse] = useState(
-    navData.filter((item) => item?.subItems)
-  );
+  const [parentCollapse, setParentCollapse] = useState([]);
+
+  useEffect(()=>{
+   const navDataWithSubMenu =  navData?.filter((item) => item?.subItems)
+   setParentCollapse(navDataWithSubMenu)
+  },[navData])
+
+    // console.log(parentCollapse);
 
   const handleClick = (id) => {
     setParentCollapse((prevState) => {
@@ -54,12 +66,11 @@ const Sidebar = () => {
             <React.Fragment key={index}>
               {item["isHeader"] ? (
                 <li className=" isHeader d-flex align-items-center gap-1">
-                  <span className="">{item?.label}</span>
-                  {item?.icon && (
-                    <div className="text-gray_light d-flex align-items-center">
-                      {item.icon}
+                <div className="text-gray_light d-flex align-items-center">
                     </div>
-                  )}
+                  <span className="">{item?.label}</span>
+                    <AiFillCaretUp size={12} />
+                 
                 </li>
               ) : item.subItems ? (
                 <li className="mt-1 pe-2">
@@ -112,7 +123,7 @@ const Sidebar = () => {
                             } `}
                           >
                             <Link
-                              to={subItem.link ? subItem.link : "/#"}
+                              to={subItem?.channelId ? `channel/${subItem.channelId}` : subItem.link ? subItem.link : "/#" }
                               className="d-flex align-items-center  gap-1 justify-content-between  w-100"
                               onClick={() => setActive(subItem.label)}
                             >
