@@ -1,5 +1,5 @@
 import React from "react";
-import { AiFillCaretUp } from "react-icons/ai";
+// import { AiFillCaretUp } from "react-icons/ai";
 
 const NavData = () => {
   const menuItems = [
@@ -11,7 +11,7 @@ const NavData = () => {
       id: "allInbox",
       label: "All Inbox",
       icon: "inbox",
-      link: "/app/all-inbox", 
+      link: "/app/all-inbox",
       // state: false,
       // subItems: [
       //   {
@@ -167,7 +167,7 @@ const NavData = () => {
       subItems: [
         {
           id: "designing-channel",
-          channelId : "5f9f1b5b5b9b9b5b5b5b5b5b",
+          channelId: "5f9f1b5b5b9b9b5b5b5b5b5b",
           label: "Designing Channel",
           icon: "circle",
           link: "/app/channel/designing-channel",
@@ -177,7 +177,7 @@ const NavData = () => {
         },
         {
           id: "testing-channel",
-          channelId : "5f9f1b5b5b9b9b5b5b5b5b5d",
+          channelId: "5f9f1b5b5b9b9b5b5b5b5b5d",
           label: "Testing Channel",
           icon: "circle",
           link: "/app/channel/testing-channel",
@@ -187,7 +187,7 @@ const NavData = () => {
         },
         {
           id: "marketing-channel",
-          channelId : "5f9f1b5b5b9b9b5b5b5b5b5c",
+          channelId: "5f9f1b5b5b9b9b5b5b5b5b5c",
           label: "Marketing Channel",
           icon: "circle",
           link: "/app/channel/marketing-channel",

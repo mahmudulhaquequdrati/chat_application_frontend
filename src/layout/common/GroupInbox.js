@@ -28,7 +28,7 @@ const GroupInbox = () => {
     setInboxDataActive(!inboxDataActive);
   };
 
-  const {id} = useParams()
+  const { id } = useParams();
   // console.log(id)
 
   // useEffect(() => {
@@ -43,24 +43,22 @@ const GroupInbox = () => {
   //   response();
   // }, []);
   useEffect(() => {
-    if(id){
-    const response = () =>
-    fetch(
-      `http://localhost:5000/api/v1/conversations/all-conversations/channel/${id}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setConversationData(data?.conversation);
-      });
-  response();
-    }
-    else{
+    if (id) {
+      const response = () =>
+        fetch(
+          `https://chat-application-backend-gold.vercel.app/api/v1/conversations/all-conversations/channel/${id}`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            setConversationData(data?.conversation);
+          });
+      response();
+    } else {
       getAllConversations().then((res) => {
         setConversationData(res?.data?.conversations);
       });
     }
   }, [id]);
-
 
   const handleGetMessages = async (id) => {
     getMessagesById(id).then((res) => {

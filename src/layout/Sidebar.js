@@ -1,29 +1,29 @@
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import React, { useEffect, useState } from "react";
-import { BsChevronDown , BsChevronRight} from "react-icons/bs";
+import { BsChevronDown, BsChevronRight } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
-import NavData from "./data/LayoutMenuData";
 import { Link } from "react-router-dom";
 import { Collapse } from "reactstrap";
 import { AiFillCaretUp } from "react-icons/ai";
 
 const Sidebar = () => {
-  // const navData = NavData().props.children;
-  const [navData , setNavData] = useState([]);
-  useEffect(()=>{
-    fetch("http://localhost:5000/api/v1/channels/all-channels").then(res =>res.json()).then(data =>setNavData(data?.channels)).catch(err => console.log(err))
-  },[])
-  // console.log(navData)
+  const [navData, setNavData] = useState([]);
+  useEffect(() => {
+    fetch(
+      "https://chat-application-backend-gold.vercel.app/api/v1/channels/all-channels"
+    )
+      .then((res) => res.json())
+      .then((data) => setNavData(data?.channels))
+      .catch((err) => console.log(err));
+  }, []);
 
   const [active, setActive] = useState("");
   const [parentCollapse, setParentCollapse] = useState([]);
 
-  useEffect(()=>{
-   const navDataWithSubMenu =  navData?.filter((item) => item?.subItems)
-   setParentCollapse(navDataWithSubMenu)
-  },[navData])
-
-    // console.log(parentCollapse);
+  useEffect(() => {
+    const navDataWithSubMenu = navData?.filter((item) => item?.subItems);
+    setParentCollapse(navDataWithSubMenu);
+  }, [navData]);
 
   const handleClick = (id) => {
     setParentCollapse((prevState) => {
@@ -66,25 +66,23 @@ const Sidebar = () => {
             <React.Fragment key={index}>
               {item["isHeader"] ? (
                 <li className=" isHeader d-flex align-items-center gap-1">
-                <div className="text-gray_light d-flex align-items-center">
-                    </div>
+                  <div className="text-gray_light d-flex align-items-center"></div>
                   <span className="">{item?.label}</span>
-                    <AiFillCaretUp size={12} />
-                 
+                  <AiFillCaretUp size={12} />
                 </li>
               ) : item.subItems ? (
                 <li className="mt-1 pe-2">
                   <div
-                    // onClick={item.click}
                     onClick={() => handleClick(item?.id)}
-                    // to={item.link ? item.link : "/#"}
                     className="d-flex align-items-center justify-content-between w-100 gap-1  menu_item ps-1 text-gray_light pe-2"
                   >
                     <div className="d-flex align-items-center gap-1">
-                    {
-                      parentCollapse.find((x) => x.id === item?.id)?.state ?<BsChevronDown  size={14} /> : <BsChevronRight size={14} />
-                    }
-                      
+                      {parentCollapse.find((x) => x.id === item?.id)?.state ? (
+                        <BsChevronDown size={14} />
+                      ) : (
+                        <BsChevronRight size={14} />
+                      )}
+
                       <FeatherIcon
                         icon={item.icon}
                         className={`align-self-center icons ${
@@ -123,7 +121,13 @@ const Sidebar = () => {
                             } `}
                           >
                             <Link
-                              to={subItem?.channelId ? `channel/${subItem.channelId}` : subItem.link ? subItem.link : "/#" }
+                              to={
+                                subItem?.channelId
+                                  ? `channel/${subItem.channelId}`
+                                  : subItem.link
+                                  ? subItem.link
+                                  : "/#"
+                              }
                               className="d-flex align-items-center  gap-1 justify-content-between  w-100"
                               onClick={() => setActive(subItem.label)}
                             >
