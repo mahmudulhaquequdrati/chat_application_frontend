@@ -4,6 +4,7 @@ import ChatInput from "../../components/common/ChatInput";
 import ConversationUser from "../../components/common/ConversationUser";
 import {
   getAllConversations,
+  getConversationByTag,
   getMessagesById,
 } from "../../helpers/api_services/api_services";
 
@@ -29,6 +30,7 @@ const GroupInbox = () => {
   };
 
   const { id } = useParams();
+  const { tagName } = useParams();
   // console.log(id)
 
   // useEffect(() => {
@@ -53,12 +55,19 @@ const GroupInbox = () => {
             setConversationData(data?.conversation);
           });
       response();
-    } else {
+    }
+     if(tagName){
+      console.log(tagName)
+      getConversationByTag(tagName).then((res) => {
+        setConversationData(res?.conversation);
+      });
+    }
+    if(!id && !tagName) {
       getAllConversations().then((res) => {
         setConversationData(res?.data?.conversations);
       });
     }
-  }, [id]);
+  }, [id,tagName]);
 
   const handleGetMessages = async (id) => {
     getMessagesById(id).then((res) => {

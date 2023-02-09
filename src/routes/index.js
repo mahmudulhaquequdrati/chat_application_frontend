@@ -8,7 +8,6 @@ import NotFound from "../pages/NotFound";
 import ConversationLayout from "../layout/ConversationLayout";
 import GroupInbox from "../layout/common/GroupInbox";
 import CommingSoon from "../pages/CommingSoon";
-import TagInbox from "../layout/common/TagInbox";
 
 const Index = () => {
   return (
@@ -25,7 +24,7 @@ const Index = () => {
           <Route path="app" element={<ConversationLayout />}>
             <Route index="true" element={<Navigate to="all-inbox" />} />
             <Route path="all-inbox" element={<GroupInbox />} />
-            <Route path="tags/:tagName" element={<TagInbox />} />
+            <Route path="tags/:tagName" element={<GroupInbox />} />
             <Route path="channel/:id" element={<GroupInbox />} />
             <Route path="*" element={<CommingSoon />} />
           </Route>

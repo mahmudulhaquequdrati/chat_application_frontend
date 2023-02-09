@@ -77,8 +77,12 @@ const Sidebar = () => {
             {nav?.types.map((type) => (
               <React.Fragment>
                 <div className="d-flex align-items-center  gap-2">
-                  <BsChevronDown size={14} />
-                  <div className="d-flex align-items-center gap-1">
+                {
+                    type.label !== "All Inbox" &&  <BsChevronDown size={14} />
+                  }
+                 
+                  <div className={`d-flex ${type.label === "All Inbox" && "ms-4"} align-items-center gap-1`}>
+                 
                     <FeatherIcon
                       icon={type.icon}
                       className={`align-self-center icons ${
