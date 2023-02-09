@@ -5,9 +5,9 @@ import { GoPrimitiveDot } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { Collapse } from "reactstrap";
 import { AiFillCaretUp } from "react-icons/ai";
-
 const Sidebar = () => {
   const [navData, setNavData] = useState([]);
+  const [tryNav, setTryNav] = useState([]);
   useEffect(() => {
     fetch(
       "https://chat-application-backend-gold.vercel.app/api/v1/channels/all-channels"
@@ -16,7 +16,13 @@ const Sidebar = () => {
       .then((data) => setNavData(data?.channels))
       .catch((err) => console.log(err));
   }, []);
-
+  useEffect(() => {
+    fetch("http://localhost:3000/data.json")
+      .then((res) => res.json())
+      .then((data) => setTryNav(data))
+      .catch((err) => console.error(err));
+  }, []);
+  console.log(tryNav);
   const [active, setActive] = useState("");
   const [parentCollapse, setParentCollapse] = useState([]);
 
@@ -58,14 +64,78 @@ const Sidebar = () => {
   }, [navData]);
 
   return (
-    <div className="  menus" id="menus">
+    <div className="menus" id="menus">
       {/* start */}
+
+      {/* new Menu bar section  */}
       <React.Fragment>
+        {tryNav.map((nav) => (
+          <React.Fragment key={nav?.heading}>
+            <h6 className="my-2 ">
+              {nav?.heading} <AiFillCaretUp size={12} />
+            </h6>
+            {nav?.types.map((type) => (
+              <React.Fragment>
+                <div className="d-flex align-items-center  gap-2">
+                  <BsChevronDown size={14} />
+                  <div className="d-flex align-items-center gap-1">
+                    <FeatherIcon
+                      icon={type.icon}
+                      className={`align-self-center icons ${
+                        type?.color ? `text-${type?.color}` : ""
+                      }`}
+                      size={14}
+                    />
+                    <span>{type.label}</span>
+                  </div>
+                </div>
+                {type?.tagsAndChannel.map((tc) => (
+                  <React.Fragment>
+                    <div className={tc.subItems ? `p-1 d-flex gap-1 ms-2` :"ms-4 p-1"}>
+                    <span >
+                      {
+                        tc?.subItems &&  <BsChevronDown size={14} />
+                      }
+                    </span>
+                    <div>
+                      <FeatherIcon
+                        icon={tc.icon}
+                        className={`align-self-center icons ${
+                          tc?.color ? `text-${tc?.color}` : ""
+                        }`}
+                        size={14}
+                      />
+                      <span className="ms-1">{tc.label}</span>
+                    </div>
+                    </div>
+                    {
+                      tc?.subItems && tc.subItems.map(item =><div className="ms-5">
+                      <FeatherIcon
+                        icon={item.icon}
+                        className={`align-self-center icons ${
+                          item?.color ? `text-${item?.color}` : ""
+                        }`}
+                        size={14}
+                      />
+                        <span className="ms-1">{item.label}</span>
+                      </div>)
+                    }
+                  
+                  </React.Fragment>
+                ))}
+              </React.Fragment>
+            ))}
+          </React.Fragment>
+        ))}
+      </React.Fragment>
+      {/* new Menu bar section  */}
+
+      {/* <React.Fragment>
         {(navData || []).map((item, index) => {
           return (
             <React.Fragment key={index}>
               {item["isHeader"] ? (
-                <li className=" isHeader d-flex align-items-center gap-1">
+                <li className=" isHeader d-flex align-items-center gap-1 ">
                   <div className="text-gray_light d-flex align-items-center"></div>
                   <span className="">{item?.label}</span>
                   <AiFillCaretUp size={12} />
@@ -221,7 +291,7 @@ const Sidebar = () => {
             </React.Fragment>
           );
         })}
-      </React.Fragment>
+      </React.Fragment> */}
 
       {/* end */}
     </div>
