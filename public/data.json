@@ -1,0 +1,124 @@
+[
+  {
+    "heading": "Me",
+    "types": [
+      {
+        "label": "All Inbox",
+        "icon": "inbox",
+        "type": "inbox",
+        "number": 250,
+        "state": true,
+        "tagsAndChannel" : [
+          {
+            "label": "test",
+            "icon": "tag",
+            "type": "tag",
+            "color": "primary"
+          },
+          {
+            "label": "deniel",
+            "icon": "tag",
+            "type": "tag",
+            "number": 2,
+            "color": "warning"
+          },
+          {
+            "label": "design",
+            "icon": "tag",
+            "type": "tag",
+            "number": 23,
+            "color": "success"
+          },
+          {
+            "label": "michel",
+            "icon": "tag",
+            "type": "tag",
+            "number": 43,
+            "color": "info"
+          },
+          {
+            "label": "development",
+            "icon": "tag",
+            "type": "tag",
+            "number": 55,
+            "color": "danger"
+          },
+          {
+            "label": "deniel",
+            "icon": "tag"
+          },
+          {
+            "label": "HCPOD",
+            "icon": "tag",
+            "type": "tag",
+            "number": 125,
+            "color": "primary",
+            "state": true,
+            "subItems": [
+              {
+                "label": "HCPOD1",
+                "icon": "tag",
+                "type": "tag",
+                "number": 75,
+                "color": "warning"
+              },
+              {
+                "label": "HCPOD2",
+                "icon": "tag",
+                "type": "tag",
+                "number": 50,
+                "color": "success"
+              }
+            ]
+          },
+          {
+            "label": "mark",
+            "icon": "tag",
+            "type": "tag",
+            "number": 63,
+            "color": "success"
+          }
+        ]
+      }
+     
+    ]
+  },
+  {
+    "heading": "Company Name",
+    "types": [
+      {
+        "label": "Developer Team",
+        "icon": "inbox",
+        "number": 250,
+        "state": true,
+        "tagsAndChannel": [
+          {
+            "channelId": "5f9f1b5b5b9b9b5b5b5b5b5b",
+            "label": "Designing Channel",
+            "icon": "circle",
+            "parentId": "developer-team",
+            "color": "primary",
+            "number": 50
+          },
+          {
+            "id": "testing-channel",
+            "channelId": "5f9f1b5b5b9b9b5b5b5b5b5d",
+            "label": "Testing Channel",
+            "icon": "circle",
+            "parentId": "developer-team",
+            "color": "warning",
+            "number": 200
+          },
+          {
+            "id": "marketing-channel",
+            "channelId": "5f9f1b5b5b9b9b5b5b5b5b5c",
+            "label": "Marketing Channel",
+            "icon": "circle",
+            "parentId": "developer-team",
+            "color": "success"
+          }
+        ]
+      }
+    ]
+  }
+]
